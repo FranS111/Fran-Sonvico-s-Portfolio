@@ -1,0 +1,144 @@
+/* Central palette tokens (edit these to test themes quickly) */
+:root {
+  --color-base-900: #192734;
+  --color-base-700: #22303c;
+  --color-base-500: #50577A;
+  --color-base-300: #6B728E;
+  --color-base-100: #f0f0f0;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Enhancement colors */
+  --color-enhancement-primary: #50577A;
+  --color-enhancement-secondary: #6B728E;
+  --color-enhancement-soft: #d9e3ff;
+  --color-enhancement-strong: #64B5F6;
+  --color-enhancement-tag: #01bdd8;
+
+  /* UI role tokens */
+  --color-text-light-primary: #000000;
+  --color-text-light-secondary: #333333;
+  --color-text-dark-primary: #e6e6e6;
+  --color-text-dark-secondary: #c0c0c0;
+  --color-navbar-light-bg: rgba(65, 65, 65, 0.4);
+  --color-navbar-light-text: #f1f1f1;
+  --color-navbar-dark-bg: rgba(25, 39, 52, 0.6);
+  --color-navbar-dark-text: #e6e6e6;
+  --color-hover-dark: #151f29;
+  --color-accent-dark-primary: #404258;
+}
+
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+/* Light theme semantic aliases */
+:root,
+[data-theme="light"] {
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-base-100);
+  --text-primary: var(--color-text-light-primary);
+  --text-secondary: var(--color-text-light-secondary);
+
+  --navbar-bg: var(--color-navbar-light-bg);
+  --navbar-text: var(--color-navbar-light-text);
+  --btn-bg: rgba(255, 255, 255, 0.1);
+
+  --accent-primary: var(--color-enhancement-primary);
+  --accent-secondary: var(--color-enhancement-secondary);
+
+  --interactive-hover-soft: var(--color-enhancement-soft);
+  --interactive-hover-strong: var(--color-hover-dark);
+
+  --chip-tech-text: #213d5f;
+  --chip-tech-bg: rgba(33, 61, 95, 0.11);
+  --chip-tech-border: rgba(33, 61, 95, 0.24);
+  --text-strong-emphasis: #274c77;
+  /* Matches underlined keywords; used for carets, focus rings, active nav */
+  --accent-cyan: var(--text-strong-emphasis);
+
+  /* Section background patterns (full-bleed layers) */
+  --bg-pattern-line: rgba(33, 61, 95, 0.07);
+  --bg-pattern-dot: rgba(33, 61, 95, 0.1);
+  --bg-shift: rgba(33, 61, 95, 0.025);
+}
+
+/* Dark theme semantic aliases */
+[data-theme="dark"] {
+  --bg-primary: var(--color-base-900);
+  --bg-secondary: var(--color-base-700);
+  --text-primary: var(--color-text-dark-primary);
+  --text-secondary: var(--color-text-dark-secondary);
+
+  --navbar-bg: var(--color-navbar-dark-bg);
+  --navbar-text: var(--color-navbar-dark-text);
+  --btn-bg: rgba(255, 255, 255, 0.2);
+
+  --accent-primary: var(--color-accent-dark-primary);
+  --accent-secondary: var(--color-base-500);
+
+  --interactive-hover-soft: var(--color-enhancement-soft);
+  --interactive-hover-strong: var(--color-hover-dark);
+
+  --chip-tech-text: #7fa8cf;
+  --chip-tech-bg: rgba(45, 49, 66, 0.42);
+  --chip-tech-border: rgba(127, 168, 207, 0.24);
+  --text-strong-emphasis: #7d9fcf;
+  --accent-cyan: var(--text-strong-emphasis);
+
+  --bg-pattern-line: rgba(255, 255, 255, 0.04);
+  --bg-pattern-dot: rgba(255, 255, 255, 0.07);
+  --bg-shift: rgba(255, 255, 255, 0.018);
+}
+
+/* Full-bleed section backgrounds (pseudo-element extends past .container) */
+.section-bleed {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-bleed::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  z-index: -1;
+  pointer-events: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 120px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  /* El body ahora usa las variables del tema */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  /* Transición más suave y larga para cambios de tema */
+  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+}

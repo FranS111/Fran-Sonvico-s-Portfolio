@@ -1,0 +1,323 @@
+.stack {
+  text-align: left;
+  padding: 1rem 2rem 2rem;
+}
+
+.stack.section-bleed::before {
+  background-image:
+    radial-gradient(
+      60% 80% at 90% 10%,
+      color-mix(in srgb, var(--accent-cyan) 9%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(
+      to right,
+      var(--bg-pattern-line) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--bg-pattern-line) 1px,
+      transparent 1px
+    );
+  background-size: auto, 32px 32px, 32px 32px;
+  background-position: center, 0 0, 0 0;
+  background-repeat: no-repeat, repeat, repeat;
+}
+
+.stack-panel {
+  border-radius: 22px;
+  padding: 0.95rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.05)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(22, 30, 45, 0.12);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .stack-panel {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 35px rgba(10, 16, 28, 0.35);
+}
+
+/* Theme-aware variables for Stack (used by Accordion, Experience cards) */
+:root {
+  --stack-card-bg: rgba(255, 255, 255, 0.03);
+  --stack-card-border: rgba(0, 0, 0, 0.06);
+  --stack-card-hover-bg: rgba(255, 255, 255, 0.045);
+  --stack-tag-bg: rgba(255, 255, 255, 0.03);
+  --stack-muted: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] {
+  --stack-card-bg: rgba(255, 255, 255, 0.02);
+  --stack-card-border: rgba(255, 255, 255, 0.04);
+  --stack-card-hover-bg: rgba(255, 255, 255, 0.035);
+  --stack-tag-bg: rgba(255, 255, 255, 0.03);
+  --stack-muted: rgba(255, 255, 255, 0.45);
+}
+
+.stack-grid {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.stack-left {
+  width: 50%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.25rem;
+}
+
+.stack-group-label {
+  margin: 0 0 0.45rem 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  font-family: "Roboto Mono", monospace;
+  opacity: 0.9;
+}
+
+.stack-group-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.stack-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  width: auto;
+  flex: 0 1 auto;
+  white-space: nowrap;
+  font-weight: 700;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9rem;
+  border-radius: 999px;
+}
+
+.stack-item.variant-default {
+  color: var(--chip-tech-text);
+  background: var(--chip-tech-bg);
+  border: 1px solid var(--chip-tech-border);
+}
+
+.stack-item.variant-dark {
+  color: var(--navbar-text);
+  background: color-mix(in srgb, var(--color-base-900) 72%, transparent);
+  border: 1px solid var(--chip-tech-border);
+}
+
+.stack-item.variant-muted {
+  color: color-mix(in srgb, var(--accent-primary) 72%, var(--text-primary));
+  background: color-mix(in srgb, var(--accent-secondary) 30%, transparent);
+  border: 1px solid var(--chip-tech-border);
+}
+
+[data-theme="dark"] .stack-item.variant-default {
+  color: var(--color-white);
+}
+
+[data-theme="dark"] .stack-item.variant-dark {
+  color: var(--color-white);
+  background: rgba(20, 25, 40, 0.78);
+  border-color: rgba(170, 195, 226, 0.26);
+}
+
+[data-theme="dark"] .stack-item.variant-muted {
+  color: var(--color-white);
+  background: rgba(52, 62, 113, 0.24);
+  border-color: rgba(170, 195, 226, 0.22);
+}
+
+.stack-item:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.stack-item:hover,
+.stack-item.active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(15, 20, 30, 0.25);
+  border-color: var(--accent-cyan);
+  color: var(--text-primary);
+  background-color: var(--interactive-hover-soft);
+}
+
+[data-theme="dark"] .stack-item:hover,
+[data-theme="dark"] .stack-item.active {
+  color: var(--color-white);
+  background-color: var(--interactive-hover-strong);
+  border-color: var(--accent-cyan);
+}
+
+.stack-right {
+  width: 50%;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+.stack-stats-line {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  opacity: 0.85;
+  font-family: "Roboto Mono", monospace;
+}
+
+.preview-tags {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.preview-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--chip-tech-bg);
+  color: var(--chip-tech-text);
+  border: 1px solid var(--chip-tech-border);
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.tech-preview {
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--stack-card-bg),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid var(--stack-card-border);
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  color: var(--text-primary);
+  will-change: opacity, transform, filter;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    filter 180ms ease;
+  overflow: auto;
+}
+
+.tech-preview-in {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0);
+}
+
+.tech-preview-out {
+  opacity: 0;
+  transform: translateX(12px) scale(0.985);
+  filter: blur(1px);
+}
+
+.tech-preview-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--stack-muted);
+  border-style: dashed;
+  border-width: 1px;
+  border-color: var(--chip-tech-border);
+  background: transparent;
+}
+
+.tech-preview-empty .hover-text {
+  font-style: normal;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+}
+
+.tech-preview-empty .hover-text::before {
+  content: "> ";
+  font-weight: 700;
+  color: var(--accent-cyan);
+  opacity: 0.85;
+}
+
+.tech-preview-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.tech-preview-category {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  font-family: "Roboto Mono", monospace;
+  opacity: 0.9;
+}
+
+.tech-preview-card > p:not(.tech-preview-category) {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  font-size: 0.92rem;
+}
+
+.hover-text {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .stack-grid {
+    flex-direction: column;
+  }
+
+  .stack-left,
+  .stack-right {
+    width: 100%;
+  }
+
+  .stack-item {
+    width: 100%;
+  }
+}

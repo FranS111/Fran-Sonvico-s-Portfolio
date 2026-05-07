@@ -1,0 +1,48 @@
+.toggle-switch {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+}
+
+.toggle-switch-checkbox {
+  display: none;
+}
+
+.toggle-switch-label {
+  display: block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-switch-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 34px;
+  background-color: var(--sign-up-btn-bg);
+  transition: background-color 0.3s;
+}
+
+.toggle-switch-switch {
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--text-color);
+  transition: left 0.3s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-inner {
+  background-color: var(--sign-up-btn-bg-hover);
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
+  left: 28px;
+}

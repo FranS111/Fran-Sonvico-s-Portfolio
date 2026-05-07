@@ -1,0 +1,393 @@
+.contact {
+  text-align: left;
+  padding: 2rem 2rem 3rem;
+}
+
+#contact.contact {
+  scroll-margin-top: 90px;
+}
+
+.contact-panel {
+  margin-top: 1.25rem;
+  border-radius: 22px;
+  padding: 0.95rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.05)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(22, 30, 45, 0.12);
+  min-height: 40rem;
+}
+
+[data-theme="dark"] .contact-panel {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 35px rgba(10, 16, 28, 0.35);
+}
+
+.contact-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.contact-aside {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.35rem 0.5rem 0.35rem 0.25rem;
+}
+
+.contact-aside-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+.contact-aside-lead {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.contact-terminal {
+  margin: 0.25rem 0 0;
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--chip-tech-bg) 80%, transparent);
+  border: 1px dashed var(--chip-tech-border);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.contact-terminal-line {
+  margin: 0.15rem 0;
+  color: var(--text-secondary);
+}
+
+.contact-terminal-k {
+  color: var(--accent-cyan);
+  opacity: 0.85;
+  margin-right: 0.25rem;
+}
+
+.contact-terminal-v {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.contact-email-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.contact-email-link {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.88rem;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.contact-email-link:hover {
+  text-decoration: underline;
+}
+
+.contact-copy-btn {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--chip-tech-border);
+  background: var(--chip-tech-bg);
+  color: var(--chip-tech-text);
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.contact-copy-btn:hover {
+  border-color: var(--accent-cyan);
+}
+
+.contact-meta {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.contact-meta-label {
+  font-family: "Roboto Mono", monospace;
+  opacity: 0.85;
+}
+
+.contact-meta-label::after {
+  content: ":";
+  margin-left: 0.15rem;
+}
+
+.contact-meta-value {
+  color: var(--text-primary);
+}
+
+.contact-socials {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.4rem 0;
+  transition: color 0.18s ease;
+}
+
+.contact-social-link:hover {
+  color: var(--accent-cyan);
+}
+
+.contact-social-link svg {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.contact-form-shell {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.contact-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 0.35rem 0.25rem 0.35rem 0.5rem;
+  box-sizing: border-box;
+}
+
+.contact-fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.contact-fieldset--segment {
+  margin-bottom: 0.15rem;
+}
+
+.contact-legend {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  font-family: "Roboto Mono", monospace;
+  margin-bottom: 0.45rem;
+  padding: 0;
+}
+
+.contact-segment {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-segment-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--chip-tech-border);
+  background: var(--chip-tech-bg);
+  color: var(--chip-tech-text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.contact-segment-option:has(input:checked) {
+  border-color: var(--accent-cyan);
+  background: color-mix(in srgb, var(--accent-cyan) 12%, var(--chip-tech-bg));
+  color: var(--text-primary);
+}
+
+.contact-segment-option input {
+  accent-color: var(--accent-cyan);
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+}
+
+.contact-fields-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.contact-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.contact-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.55rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--stack-card-border);
+  background: color-mix(in srgb, var(--stack-card-bg) 92%, var(--bg-primary));
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.contact-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.65;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-cyan) 28%, transparent);
+}
+
+.contact-input--error {
+  border-color: color-mix(in srgb, #e57373 70%, var(--stack-card-border));
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+  line-height: 1.5;
+}
+
+.contact-field-error {
+  font-size: 0.75rem;
+  color: color-mix(in srgb, #e57373 85%, var(--text-secondary));
+}
+
+.contact-form-actions {
+  margin-top: 0.25rem;
+}
+
+.contact-submit {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: "Roboto Mono", monospace;
+  letter-spacing: 0.04em;
+  color: var(--color-white);
+  cursor: pointer;
+  background: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--accent-cyan) 85%, #1a3a5c),
+    color-mix(in srgb, var(--accent-primary) 55%, var(--accent-cyan))
+  );
+  box-shadow: 0 6px 22px color-mix(in srgb, var(--accent-cyan) 22%, transparent);
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 8px 26px color-mix(in srgb, var(--accent-cyan) 28%, transparent);
+}
+
+.contact-form-status {
+  min-height: 1.5rem;
+}
+
+.contact-success {
+  margin: 0;
+  padding: 0.65rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  background: color-mix(in srgb, var(--accent-cyan) 8%, var(--chip-tech-bg));
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 35%, var(--chip-tech-border));
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 1.25rem 1.25rem 2.5rem;
+  }
+
+  .contact-field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-aside {
+    padding-right: 0.25rem;
+  }
+}
