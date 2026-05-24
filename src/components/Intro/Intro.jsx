@@ -15,10 +15,6 @@ export default function Intro() {
             </span>
           </h1>
           <h2 className="intro-title">Fullstack Developer</h2>
-          <p className="intro-tagline">
-            Modular components, scalable architecture, and user-driven solutions
-            for the modern day.
-          </p>
           <div className="intro-social-row">
             <div className="intro-available" title="Open to opportunities">
               <span className="intro-available-dot" aria-hidden="true" />
@@ -48,38 +44,39 @@ export default function Intro() {
         <div className="intro-right">
           <div className="intro-content">
             <p>
-              I'm a developer passionate about crafting accessible,
-              pixel-perfect user interfaces that blend thoughtful design with
-              robust engineering. My favorite work lies at the intersection of
-              design and development, creating experiences that not only look
-              great but are meticulously built for performance, scalability, and
-              usability.
+              <strong>Fullstack Developer</strong> with 2+ years of experience
+              building and optimizing <strong>enterprise web applications</strong>.
+              Working across the full <strong>lifecycle</strong>—from robust{" "}
+              <strong>backend architecture</strong> to seamless{" "}
+              <strong>user interfaces</strong>—with a long-term focus on the{" "}
+              <strong>Frontend</strong> ecosystem.
             </p>
             <p>
-              As a <strong>Fullstack Developer</strong>, I specialize in
-              building end-to-end solutions that seamlessly connect beautiful
-              frontend experiences with powerful backend systems. I'm proficient
-              in modern JavaScript frameworks like <strong>React</strong>,
-              backend technologies including <strong>Java</strong> and{" "}
-              <strong>Node.js</strong>, and database management with{" "}
-              <strong>SQL</strong>. My approach combines frontend excellence
-              with solid backend architecture to deliver complete,
-              production-ready applications.
+              Beyond writing code, I combine a solid{" "}
+              <strong>technical foundation</strong> with{" "}
+              <strong>lateral thinking</strong> and an{" "}
+              <strong>aesthetic sensibility</strong> shaped by music, art, and
+              architecture—bringing both visual craft and novel solutions to complex
+              problems. I care deeply about <strong>UX</strong> and{" "}
+              <strong>interaction design</strong>: interfaces that are intuitive and
+              appealing, yet <strong>technically efficient</strong> and optimized for{" "}
+              <strong>system performance</strong>, delivering real{" "}
+              <strong>end-to-end business value</strong>.
             </p>
             <p>
-              I'm constantly learning and improving my skills across the full
-              development stack, from <strong>HTML5</strong> and{" "}
-              <strong>CSS3</strong> for creating responsive, modern interfaces,
-              to advanced JavaScript patterns and backend API development. I
-              believe in writing clean, maintainable code and following best
-              practices that ensure long-term project success.
+            Adept at managing full-stack cohesion, managing{" "}
+              <strong>complex data flows</strong> and designing{" "}
+              <strong>modular architectures</strong> with <strong>reusable</strong>,
+              maintainable components for large, long-term projects. I have cut critical{" "}
+              <strong>loading times</strong> from seconds to near-instant response,
+              maintained critical platforms in production, and handled demanding{" "}
+              <strong>large-scale projects</strong>.
             </p>
             <p>
-              When I'm not coding, I'm usually exploring new technologies,
-              contributing to open-source projects, or working on personal
-              projects that challenge me to grow as a developer. I'm always
-              excited to take on new challenges and collaborate on innovative
-              solutions.
+              Thrive in high-collaboration <strong>Agile</strong> environments
+              , with a strong commitment to promoting{" "}
+              <strong>continuous learning</strong>, <strong>engineering best practices</strong>, and high-quality{" "}
+              <strong>technical documentation</strong>.
             </p>
           </div>
         </div>

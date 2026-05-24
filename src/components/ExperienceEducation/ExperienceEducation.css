@@ -1,6 +1,7 @@
 .experience-education {
   text-align: left;
   padding: 0 2rem 2rem;
+  margin-top: 1rem;
 }
 
 #experience .experience-panel,
@@ -215,6 +216,12 @@
   color: var(--accent-cyan);
   opacity: 0.55;
   font-weight: 700;
+}
+
+@media (max-width: 968px) {
+  .experience-education {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 900px) {

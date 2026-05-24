@@ -2,28 +2,7 @@ import { useState } from "react";
 import "./Stack.css";
 import TechPreview from "../TechPreview/TechPreview";
 import SectionHeader from "../SectionHeader/SectionHeader";
-
-const stackGroups = [
-  {
-    label: "// frontend",
-    items: ["HTML5", "CSS3", "JavaScript", "React", "AngularJS"],
-  },
-  {
-    label: "// backend",
-    items: [
-      "Java",
-      "Spring Framework",
-      "PHP",
-      "Node.js",
-      "Express",
-      "APIs REST",
-    ],
-  },
-  {
-    label: "// database",
-    items: ["SQL", "PL/SQL", "Oracle Database", "MongoDB"],
-  },
-];
+import { stackGroups, stackPreviews } from "../../data/stack";
 
 const categoryMap = (() => {
   const map = {};
@@ -35,47 +14,14 @@ const categoryMap = (() => {
   return map;
 })();
 
-const previews = {
-  React: {
-    title: "Portfolio Website",
-    desc: "Minimalistic portfolio built with React.",
-    tags: ["React", "CSS"],
-  },
-  "Next.js": {
-    title: "Blog with SSR",
-    desc: "A performant blog using Next.js and SSG.",
-    tags: ["Next.js", "Vercel"],
-  },
-  "Node.js": {
-    title: "E-commerce App",
-    desc: "Fullstack shop with cart & checkout.",
-    tags: ["Node.js", "Express", "MongoDB"],
-  },
-  Express: {
-    title: "API Server",
-    desc: "REST API for user auth and products.",
-    tags: ["Express", "Node.js"],
-  },
-  MongoDB: {
-    title: "Data Store",
-    desc: "Database for storing products and users.",
-    tags: ["MongoDB"],
-  },
-  CSS3: {
-    title: "Styled UI",
-    desc: "Responsive UI built with modern CSS.",
-    tags: ["CSS3", "Animations"],
-  },
-};
-
 const totalTech = stackGroups.reduce((acc, g) => acc + g.items.length, 0);
 const numCategories = stackGroups.length;
-const numFeatured = Object.keys(previews).length;
+const numFeatured = Object.keys(stackPreviews).length;
 
 export default function Stack() {
   const [hovered, setHovered] = useState(null);
 
-  const previewData = hovered ? previews[hovered] ?? null : null;
+  const previewData = hovered ? stackPreviews[hovered] ?? null : null;
   const category = hovered ? categoryMap[hovered] ?? null : null;
 
   return (
@@ -83,7 +29,7 @@ export default function Stack() {
       <SectionHeader
         index="03"
         name="TechStack"
-        subtitle="Languages and Frameworks i worked with"
+        subtitle="Languages, frameworks, and tools from my professional work"
       />
       <div className="stack-panel">
         <div className="stack-grid">

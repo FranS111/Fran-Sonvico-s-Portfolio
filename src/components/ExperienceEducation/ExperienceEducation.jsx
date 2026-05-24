@@ -1,65 +1,22 @@
 import "./ExperienceEducation.css";
 import SectionHeader from "../SectionHeader/SectionHeader";
+import {
+  experienceItems,
+  educationItems,
+  experiencePanel,
+  educationPanel,
+} from "../../data/experience";
 
 export default function ExperienceEducation() {
-  const experienceItems = [
-    {
-      period: "JAN 2025 - PRESENT",
-      role: "Full-Stack Engineer",
-      company: "Ecodreum",
-      description:
-        "Architected and shipped production-ready cross-platform applications, connecting scalable frontend experiences with robust backend services.",
-      tags: ["React Native", "Expo", "Node.js", "Express", "TypeScript"],
-    },
-    {
-      period: "SEP 2020 - PRESENT",
-      role: "Software Engineer",
-      company: "Freelance",
-      description:
-        "Engineered and deployed full-stack web and mobile solutions for multiple clients, translating business requirements into clean, maintainable products.",
-      tags: ["TypeScript", "React", "Next.js", "React Native", "Node.js"],
-    },
-    {
-      period: "MAY 2025 - AUG 2025",
-      role: "IT Specialist",
-      company: "Public Sector",
-      description:
-        "Supported infrastructure, software, and network operations, focusing on reliability, incident response, and continuous service improvement.",
-      tags: ["IT Support", "Networking", "Security", "Hardware"],
-    },
-  ];
-  const educationItems = [
-    {
-      period: "2018 - 2022",
-      role: "B.Sc. in Computer Science",
-      company: "University of Tech",
-      description:
-        "Strong foundation in software engineering, algorithms, and database systems with a focus on maintainable architecture.",
-      tags: ["Software Engineering", "Data Structures", "Databases"],
-    },
-    {
-      period: "2023",
-      role: "Frontend Bootcamp",
-      company: "Code Academy",
-      description:
-        "Intensive hands-on program focused on React, component design, and responsive UI development for production-ready interfaces.",
-      tags: ["React", "UI Architecture", "Responsive Design"],
-    },
-  ];
-
   const panels = [
     {
       id: "experience",
-      index: "01",
-      name: "Experience",
-      subtitle: "Professional path and recent roles",
+      ...experiencePanel,
       items: experienceItems,
     },
     {
       id: "education",
-      index: "02",
-      name: "Education",
-      subtitle: "Academic background and training",
+      ...educationPanel,
       items: educationItems,
     },
   ];
