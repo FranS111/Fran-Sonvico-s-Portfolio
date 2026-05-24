@@ -31,8 +31,14 @@ export default function Footer() {
         
         <nav className="footer__links" aria-label="Enlaces legales">
           <p className="footer__heading">Legal</p>
-          <a href="/privacy.html">Política de privacidad</a>
+          <a href={`${import.meta.env.BASE_URL}privacy.html`}>Política de privacidad</a>
         </nav>
+
+        <div className="footer__signature" aria-label="Firma de marca">
+          <div className="footer__mini-logo">
+            <span className="footer__mini-logo-text">&lt;f/&gt;</span>
+          </div>
+        </div>
       </div>
     </footer>
   );

@@ -10,10 +10,10 @@ The workflow [`.github/workflows/static.yml`](.github/workflows/static.yml) buil
 
 In the repository **Settings → Pages**:
 
-1. **Source:** Deploy from a branch
-2. **Branch:** `gh-pages` / `/ (root)`
+1. **Source:** **GitHub Actions** (not "Deploy from a branch")
+2. Push to `main` or run **Actions → Deploy portfolio to GitHub Pages → Run workflow**
 
-If the site looks blank, Pages is likely serving the `main` branch source files instead of the built `dist/` output. Switch the source to `gh-pages` as above and re-run the workflow (Actions → Deploy portfolio to GitHub Pages → Run workflow).
+If the site looks blank, Pages was likely serving raw source from `main` instead of the built `dist/` output. The workflow must run `npm run build` and upload the `dist` folder.
 
 ## Local development
 
