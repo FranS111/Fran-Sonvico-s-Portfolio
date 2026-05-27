@@ -1,7 +1,10 @@
 import "./Footer.css";
-import { CONTACT_EMAIL, socials } from "../../data/socials";
+import { getSocials } from "../../data/socials";
+import useI18n from "../../hooks/useI18n";
 
 export default function Footer() {
+  const { language, t } = useI18n();
+  const socials = getSocials(language);
   const year = new Date().getFullYear();
   const featuredSocials = socials.filter(({ href }) => !href.startsWith("mailto:")).slice(0, 2);
 
@@ -11,16 +14,16 @@ export default function Footer() {
         <div className="footer__brand">
           <p className="footer__brand-name">franSonvico</p>
           <p className="footer__brand-copy">
-            © {year} franSonvico. Todos los derechos reservados.
+            {t("footer.rights", { year })}
           </p>
           <p className="footer__brand-note">
-            Este sitio y su contenido no pueden reutilizarse sin permiso.
+            {t("footer.note")}
           </p>
         </div>
 
-        <nav className="footer__links" aria-label="Enlaces útiles">
-          <p className="footer__heading">Útil</p>
-          <a href="#contact">Contacto</a>
+        <nav className="footer__links" aria-label={t("footer.usefulAria")}>
+          <p className="footer__heading">{t("footer.useful")}</p>
+          <a href="#contact">{t("footer.contact")}</a>
           {featuredSocials.map(({ label, href }) => (
             <a key={label} href={href} target="_blank" rel="noreferrer noopener">
               {label}
@@ -29,16 +32,11 @@ export default function Footer() {
         </nav>
 
         
-        <nav className="footer__links" aria-label="Enlaces legales">
-          <p className="footer__heading">Legal</p>
-          <a href={`${import.meta.env.BASE_URL}privacy.html`}>Política de privacidad</a>
+        <nav className="footer__links" aria-label={t("footer.legalAria")}>
+          <p className="footer__heading">{t("footer.legal")}</p>
+          <a href={`${import.meta.env.BASE_URL}privacy.html`}>{t("footer.privacy")}</a>
         </nav>
 
-        <div className="footer__signature" aria-label="Firma de marca">
-          <div className="footer__mini-logo">
-            <span className="footer__mini-logo-text">&lt;f/&gt;</span>
-          </div>
-        </div>
       </div>
     </footer>
   );

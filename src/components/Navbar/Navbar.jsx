@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import Toggle from "../Toggle/Toggle";
+import useI18n from "../../hooks/useI18n";
 
 const SECTION_IDS = [
   "intro",
@@ -14,6 +15,9 @@ const NAV_OFFSET = 160;
 
 export default function Navbar({ isDarkMode, toggleTheme }) {
   const [activeId, setActiveId] = useState("intro");
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const langRef = useRef(null);
+  const { language, setLanguage, t } = useI18n();
 
   useEffect(() => {
     const onScroll = () => {
@@ -34,6 +38,17 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const onPointerDown = (event) => {
+      if (!langRef.current?.contains(event.target)) {
+        setIsLangOpen(false);
+      }
+    };
+
+    window.addEventListener("pointerdown", onPointerDown);
+    return () => window.removeEventListener("pointerdown", onPointerDown);
+  }, []);
+
   return (
     <nav className="navbar-container">
       <div className="navbar-content">
@@ -49,7 +64,7 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
               href="#intro"
               className={activeId === "intro" ? "active" : ""}
             >
-              Intro
+              {t("navbar.intro")}
             </a>
           </li>
           <li>
@@ -57,7 +72,7 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
               href="#experience"
               className={activeId === "experience" ? "active" : ""}
             >
-              Experience
+              {t("navbar.experience")}
             </a>
           </li>
           <li>
@@ -65,12 +80,12 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
               href="#education"
               className={activeId === "education" ? "active" : ""}
             >
-              Education
+              {t("navbar.education")}
             </a>
           </li>
           <li>
             <a href="#stack" className={activeId === "stack" ? "active" : ""}>
-              Stack
+              {t("navbar.stack")}
             </a>
           </li>
           <li>
@@ -78,14 +93,49 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
               href="#projects"
               className={activeId === "projects" ? "active" : ""}
             >
-              Projects
+              {t("navbar.projects")}
             </a>
           </li>
         </ul>
         <div className="navbar-buttons">
-          <a href="#contact" className="sign-up-btn sign-up-btn--contact">
-            Contact
+          <a
+            href="#contact"
+            className={`sign-up-btn sign-up-btn--contact ${activeId === "contact" ? "active" : ""}`}
+          >
+            {t("navbar.contact")}
           </a>
+          <div className="lang-dropdown" ref={langRef}>
+            <button
+              type="button"
+              className={`lang-btn ${isLangOpen ? "open" : ""}`}
+              aria-expanded={isLangOpen}
+              aria-haspopup="listbox"
+              aria-label={t("navbar.languageSelector")}
+              onClick={() => setIsLangOpen((prev) => !prev)}
+            >
+              {language}
+            </button>
+            {isLangOpen && (
+              <ul className="lang-menu" role="listbox" aria-label={t("navbar.languageSelector")}>
+                {["EN", "ES"].map((lang) => (
+                  <li key={lang}>
+                    <button
+                      type="button"
+                      className={`lang-option ${language === lang ? "active" : ""}`}
+                      role="option"
+                      aria-selected={language === lang}
+                      onClick={() => {
+                        setLanguage(lang);
+                        setIsLangOpen(false);
+                      }}
+                    >
+                      {lang}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
           <Toggle isChecked={isDarkMode} handleChange={toggleTheme} />
         </div>
       </div>

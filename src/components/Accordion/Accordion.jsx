@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import "./Accordion.css";
+import useI18n from "../../hooks/useI18n";
 
 export default function Accordion() {
+  const { t } = useI18n();
   const [activeIndex, setActiveIndex] = useState(null);
   const transitionTimeoutRef = useRef(null);
 
@@ -44,12 +46,12 @@ export default function Accordion() {
 
   const items = [
     {
-      title: "About Me",
-      content: "I'm a passionate fullstack developer with experience in React, Node.js, and more. I love creating user-friendly applications."
+      title: t("accordion.about"),
+      content: t("accordion.aboutContent"),
     },
     {
-      title: "Skills",
-      content: "Proficient in JavaScript, HTML, CSS, React, Node.js, SQL, and modern web technologies. Always learning new tools."
+      title: t("accordion.skills"),
+      content: t("accordion.skillsContent"),
     }
   ];
 

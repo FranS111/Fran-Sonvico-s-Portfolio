@@ -1,13 +1,13 @@
 import "./ExperienceEducation.css";
 import SectionHeader from "../SectionHeader/SectionHeader";
-import {
-  experienceItems,
-  educationItems,
-  experiencePanel,
-  educationPanel,
-} from "../../data/experience";
+import { getExperienceContent } from "../../data/experience";
+import useI18n from "../../hooks/useI18n";
 
 export default function ExperienceEducation() {
+  const { language } = useI18n();
+  const { experienceItems, educationItems, experiencePanel, educationPanel } =
+    getExperienceContent(language);
+
   const panels = [
     {
       id: "experience",

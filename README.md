@@ -24,6 +24,24 @@ npm run build
 npm run preview -- --base /Fran-Sonvico-s-Portfolio/
 ```
 
+## Contact form (Formspree)
+
+The contact form sends messages via [Formspree](https://formspree.io).
+
+1. Create a form at [formspree.io](https://formspree.io) and set the notification email to your inbox (e.g. the same address as `CONTACT_EMAIL` in `src/data/socials.jsx`).
+2. Copy the form endpoint URL (format: `https://formspree.io/f/xxxxxxxx`).
+3. Create `.env.local` in the project root (see `.env.example`):
+
+```bash
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your_form_id
+```
+
+4. Restart the dev server after changing env variables.
+
+For **GitHub Pages**, add `VITE_FORMSPREE_ENDPOINT` as a repository secret or build env var in your GitHub Actions workflow so it is available at build time.
+
+Without this variable, the form shows a configuration error instead of submitting.
+
 ---
 
 ## React + Vite

@@ -144,11 +144,19 @@
   border-radius: 18px;
   padding: 0.95rem 1rem;
   box-shadow: inset 2px 0 0 0 var(--chip-tech-border);
-  transition: box-shadow 0.25s ease;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .experience-item-card:hover {
   box-shadow: inset 2px 0 0 0 var(--accent-cyan);
+}
+
+#experience .experience-item-card:hover {
+  transform: translateX(8px);
+  border-color: color-mix(in srgb, var(--accent-cyan) 45%, var(--stack-card-border));
 }
 
 #education .experience-item-card {
@@ -156,6 +164,8 @@
 }
 
 #education .experience-item-card:hover {
+  transform: translateX(-8px);
+  border-color: color-mix(in srgb, var(--accent-cyan) 45%, var(--stack-card-border));
   box-shadow: inset -2px 0 0 0 var(--accent-cyan);
 }
 
@@ -241,5 +251,10 @@
 
   #education .experience-tags {
     justify-content: flex-start;
+  }
+
+  #experience .experience-item-card:hover,
+  #education .experience-item-card:hover {
+    transform: translateX(0);
   }
 }

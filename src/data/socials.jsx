@@ -1,9 +1,8 @@
 export const CONTACT_EMAIL = "fransonviconavone@gmail.com";
-
-export const socials = [
+const socialsBase = [
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/francisco-sonvico-635468255/",
     icon: (
       <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
         <path
@@ -15,7 +14,7 @@ export const socials = [
   },
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/FranS111",
     icon: (
       <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
         <path
@@ -38,3 +37,13 @@ export const socials = [
     ),
   },
 ];
+
+export function getSocials(language = "EN") {
+  const lang = language === "ES" ? "ES" : "EN";
+  return socialsBase.map((item) => {
+    if (item.label !== "Email") return item;
+    return { ...item, label: lang === "ES" ? "Correo" : "Email" };
+  });
+}
+
+export const socials = getSocials("EN");

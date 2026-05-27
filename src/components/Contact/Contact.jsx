@@ -1,9 +1,11 @@
 import { useEffect, useId, useState } from "react";
 import "./Contact.css";
 import SectionHeader from "../SectionHeader/SectionHeader";
-import { CONTACT_EMAIL, socials } from "../../data/socials";
+import { CONTACT_EMAIL, getSocials } from "../../data/socials";
+import useI18n from "../../hooks/useI18n";
 
 const MIN_MESSAGE_LEN = 20;
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT?.trim() ?? "";
 
 const initialForm = {
   inquiryType: "company",
@@ -21,22 +23,70 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
 }
 
+function buildDisplayName(form, fallbackName) {
+  if (form.inquiryType === "company") {
+    return form.contactName.trim() || form.companyName.trim() || fallbackName;
+  }
+  const full = `${form.firstName} ${form.lastName}`.trim();
+  return full || fallbackName;
+}
+
+function buildFormspreePayload(form, fallbackName, companyInquiryLabel) {
+  const displayName = buildDisplayName(form, fallbackName);
+  const subject =
+    form.inquiryType === "company"
+      ? `Portfolio · ${form.companyName.trim() || companyInquiryLabel}`
+      : `Portfolio · ${displayName}`;
+
+  const payload = {
+    name: displayName,
+    email: form.email.trim(),
+    _replyto: form.email.trim(),
+    _subject: subject,
+    inquiryType: form.inquiryType,
+    message: form.message.trim(),
+  };
+
+  if (form.inquiryType === "company") {
+    payload.companyName = form.companyName.trim();
+    payload.contactName = form.contactName.trim();
+    if (form.jobTitle.trim()) payload.jobTitle = form.jobTitle.trim();
+  } else {
+    payload.firstName = form.firstName.trim();
+    payload.lastName = form.lastName.trim();
+  }
+
+  if (form.phone.trim()) payload.phone = form.phone.trim();
+
+  return payload;
+}
+
 export default function Contact() {
+  const { language, t } = useI18n();
+  const socials = getSocials(language);
   const baseId = useId();
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
-  const [copyLabel, setCopyLabel] = useState("Copy email");
+  const [submitStatus, setSubmitStatus] = useState("idle");
+  const [submitError, setSubmitError] = useState("");
+  const [copyLabel, setCopyLabel] = useState(t("contact.copyEmail"));
+
+  const isSubmitting = submitStatus === "submitting";
 
   useEffect(() => {
-    if (!submitted) return undefined;
+    if (submitStatus !== "success") return undefined;
     const t = setTimeout(() => {
       setForm(initialForm);
-      setSubmitted(false);
+      setSubmitStatus("idle");
+      setSubmitError("");
       setErrors({});
     }, 4500);
     return () => clearTimeout(t);
-  }, [submitted]);
+  }, [submitStatus]);
+
+  useEffect(() => {
+    setCopyLabel(t("contact.copyEmail"));
+  }, [language, t]);
 
   function update(field, value) {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -52,35 +102,82 @@ export default function Contact() {
   function validate() {
     const next = {};
     if (!form.email.trim()) {
-      next.email = "Email is required.";
+      next.email = t("contact.errors.emailRequired");
     } else if (!isValidEmail(form.email)) {
-      next.email = "Enter a valid email.";
+      next.email = t("contact.errors.emailInvalid");
     }
     if (!form.message.trim() || form.message.trim().length < MIN_MESSAGE_LEN) {
-      next.message = `Message must be at least ${MIN_MESSAGE_LEN} characters.`;
+      next.message = t("contact.errors.messageMin", { min: MIN_MESSAGE_LEN });
     }
     if (form.inquiryType === "company") {
-      if (!form.companyName.trim()) next.companyName = "Company name is required.";
-      if (!form.contactName.trim()) next.contactName = "Your name is required.";
+      if (!form.companyName.trim()) next.companyName = t("contact.errors.companyNameRequired");
+      if (!form.contactName.trim()) next.contactName = t("contact.errors.contactNameRequired");
     } else {
-      if (!form.firstName.trim()) next.firstName = "First name is required.";
-      if (!form.lastName.trim()) next.lastName = "Last name is required.";
+      if (!form.firstName.trim()) next.firstName = t("contact.errors.firstNameRequired");
+      if (!form.lastName.trim()) next.lastName = t("contact.errors.lastNameRequired");
     }
     setErrors(next);
     return Object.keys(next).length === 0;
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    if (isSubmitting) return;
     if (!validate()) return;
-    setSubmitted(true);
+
+    if (!FORMSPREE_ENDPOINT) {
+      setSubmitStatus("error");
+      setSubmitError(t("contact.envError"));
+      return;
+    }
+
+    setSubmitStatus("submitting");
+    setSubmitError("");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(
+          buildFormspreePayload(
+            form,
+            t("navbar.contact"),
+            form.inquiryType === "company" ? t("contact.hiringCompany") : t("contact.individualProject")
+          )
+        ),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        const apiMessage =
+          typeof data.error === "string"
+            ? data.error
+            : Array.isArray(data.errors)
+              ? data.errors.map((err) => err.message).filter(Boolean).join(" ")
+              : "";
+        throw new Error(apiMessage || t("contact.submitErrorFallback"));
+      }
+
+      setSubmitStatus("success");
+    } catch (err) {
+      setSubmitStatus("error");
+      setSubmitError(
+        err instanceof Error && err.message
+          ? err.message
+          : t("contact.networkError")
+      );
+    }
   }
 
   async function handleCopyEmail() {
     try {
       await navigator.clipboard.writeText(CONTACT_EMAIL);
-      setCopyLabel("Copied");
-      setTimeout(() => setCopyLabel("Copy email"), 2000);
+      setCopyLabel(t("contact.copied"));
+      setTimeout(() => setCopyLabel(t("contact.copyEmail")), 2000);
     } catch {
       try {
         const ta = document.createElement("textarea");
@@ -92,11 +189,11 @@ export default function Contact() {
         ta.select();
         document.execCommand("copy");
         document.body.removeChild(ta);
-        setCopyLabel("Copied");
-        setTimeout(() => setCopyLabel("Copy email"), 2000);
+        setCopyLabel(t("contact.copied"));
+        setTimeout(() => setCopyLabel(t("contact.copyEmail")), 2000);
       } catch {
-        setCopyLabel("Copy failed");
-        setTimeout(() => setCopyLabel("Copy email"), 2000);
+        setCopyLabel(t("contact.copyFailed"));
+        setTimeout(() => setCopyLabel(t("contact.copyEmail")), 2000);
       }
     }
   }
@@ -105,8 +202,8 @@ export default function Contact() {
     <section id="contact" className="contact section-bleed">
       <SectionHeader
         index="05"
-        name="Contact"
-        subtitle="Hiring teams, founders, and collaborators — tell me what you're building"
+        name={t("contact.title")}
+        subtitle={t("contact.subtitle")}
         align="left"
       />
 
@@ -114,24 +211,23 @@ export default function Contact() {
         <div className="contact-layout">
           <aside className="contact-aside" aria-labelledby={`${baseId}-aside-heading`}>
             <h3 id={`${baseId}-aside-heading`} className="contact-aside-title">
-              Let&apos;s work together
+              {t("contact.letsWorkTogether")}
             </h3>
             <p className="contact-aside-lead">
-              Full-stack product work, scoped engagements, and long-term roles. Share
-              context and timelines — I reply with next steps, not auto-replies.
+              {t("contact.lead")}
             </p>
 
             <div className="contact-terminal" role="group" aria-label="Quick status">
               <p className="contact-terminal-line">
-                <span className="contact-terminal-k">//</span> availability:{" "}
+                <span className="contact-terminal-k">//</span> {t("contact.availability")}:{" "}
                 <span className="contact-terminal-v">open_to_roles</span>
               </p>
               <p className="contact-terminal-line">
-                <span className="contact-terminal-k">//</span> response_sla:{" "}
+                <span className="contact-terminal-k">//</span> {t("contact.responseSla")}:{" "}
                 <span className="contact-terminal-v">~48h</span>
               </p>
               <p className="contact-terminal-line">
-                <span className="contact-terminal-k">//</span> preferred_stack:{" "}
+                <span className="contact-terminal-k">//</span> {t("contact.preferredStack")}:{" "}
                 <span className="contact-terminal-v">
                   React · TypeScript · Node.js
                 </span>
@@ -152,8 +248,8 @@ export default function Contact() {
             </div>
 
             <p className="contact-meta">
-              <span className="contact-meta-label">Timezone</span>
-              <span className="contact-meta-value">Europe (UTC+1 / CET)</span>
+              <span className="contact-meta-label">{t("contact.timezone")}</span>
+              <span className="contact-meta-value">{t("contact.timezoneValue")}</span>
             </p>
 
             <ul className="contact-socials">
@@ -177,8 +273,8 @@ export default function Contact() {
           <div className="contact-form-shell">
             <form className="contact-form" onSubmit={handleSubmit} noValidate>
               <fieldset className="contact-fieldset contact-fieldset--segment">
-                <legend className="contact-legend">I&apos;m contacting as</legend>
-                <div className="contact-segment" role="radiogroup" aria-label="Inquiry type">
+                <legend className="contact-legend">{t("contact.contactingAs")}</legend>
+                <div className="contact-segment" role="radiogroup" aria-label={t("contact.inquiryTypeLabel")}>
                   <label className="contact-segment-option">
                     <input
                       type="radio"
@@ -187,7 +283,7 @@ export default function Contact() {
                       checked={form.inquiryType === "company"}
                       onChange={() => update("inquiryType", "company")}
                     />
-                    <span>Hiring / company</span>
+                    <span>{t("contact.hiringCompany")}</span>
                   </label>
                   <label className="contact-segment-option">
                     <input
@@ -197,7 +293,7 @@ export default function Contact() {
                       checked={form.inquiryType === "individual"}
                       onChange={() => update("inquiryType", "individual")}
                     />
-                    <span>Individual / project</span>
+                    <span>{t("contact.individualProject")}</span>
                   </label>
                 </div>
               </fieldset>
@@ -205,7 +301,7 @@ export default function Contact() {
               {form.inquiryType === "company" ? (
                 <div className="contact-fields-group">
                   <div className="contact-field">
-                    <label htmlFor={`${baseId}-company`}>Company name</label>
+                    <label htmlFor={`${baseId}-company`}>{t("contact.companyName")}</label>
                     <input
                       id={`${baseId}-company`}
                       type="text"
@@ -225,7 +321,7 @@ export default function Contact() {
                   </div>
                   <div className="contact-field-row">
                     <div className="contact-field">
-                      <label htmlFor={`${baseId}-cname`}>Your name</label>
+                      <label htmlFor={`${baseId}-cname`}>{t("contact.yourName")}</label>
                       <input
                         id={`${baseId}-cname`}
                         type="text"
@@ -244,7 +340,7 @@ export default function Contact() {
                       )}
                     </div>
                     <div className="contact-field">
-                      <label htmlFor={`${baseId}-role`}>Role (optional)</label>
+                      <label htmlFor={`${baseId}-role`}>{t("contact.roleOptional")}</label>
                       <input
                         id={`${baseId}-role`}
                         type="text"
@@ -261,7 +357,7 @@ export default function Contact() {
                 <div className="contact-fields-group">
                   <div className="contact-field-row">
                     <div className="contact-field">
-                      <label htmlFor={`${baseId}-fname`}>First name</label>
+                      <label htmlFor={`${baseId}-fname`}>{t("contact.firstName")}</label>
                       <input
                         id={`${baseId}-fname`}
                         type="text"
@@ -280,7 +376,7 @@ export default function Contact() {
                       )}
                     </div>
                     <div className="contact-field">
-                      <label htmlFor={`${baseId}-lname`}>Last name</label>
+                      <label htmlFor={`${baseId}-lname`}>{t("contact.lastName")}</label>
                       <input
                         id={`${baseId}-lname`}
                         type="text"
@@ -303,7 +399,7 @@ export default function Contact() {
               )}
 
               <div className="contact-field">
-                <label htmlFor={`${baseId}-email`}>Email</label>
+                <label htmlFor={`${baseId}-email`}>{t("contact.email")}</label>
                 <input
                   id={`${baseId}-email`}
                   type="email"
@@ -323,7 +419,7 @@ export default function Contact() {
               </div>
 
               <div className="contact-field">
-                <label htmlFor={`${baseId}-phone`}>Phone (optional)</label>
+                <label htmlFor={`${baseId}-phone`}>{t("contact.phoneOptional")}</label>
                 <input
                   id={`${baseId}-phone`}
                   type="tel"
@@ -336,7 +432,7 @@ export default function Contact() {
               </div>
 
               <div className="contact-field">
-                <label htmlFor={`${baseId}-message`}>Message</label>
+                <label htmlFor={`${baseId}-message`}>{t("contact.message")}</label>
                 <textarea
                   id={`${baseId}-message`}
                   name="message"
@@ -346,7 +442,7 @@ export default function Contact() {
                   className={errors.message ? "contact-input contact-textarea contact-input--error" : "contact-input contact-textarea"}
                   aria-invalid={!!errors.message}
                   aria-describedby={errors.message ? `${baseId}-message-err` : undefined}
-                  placeholder="Role, stack, timeline, project description..."
+                  placeholder={t("contact.messagePlaceholder")}
                 />
                 {errors.message && (
                   <span id={`${baseId}-message-err`} className="contact-field-error" role="alert">
@@ -356,8 +452,13 @@ export default function Contact() {
               </div>
 
               <div className="contact-form-actions">
-                <button type="submit" className="contact-submit">
-                  Submit message
+                <button
+                  type="submit"
+                  className="contact-submit"
+                  disabled={isSubmitting}
+                  aria-busy={isSubmitting}
+                >
+                  {isSubmitting ? t("contact.sending") : t("contact.submitMessage")}
                 </button>
               </div>
 
@@ -366,10 +467,14 @@ export default function Contact() {
                 aria-live="polite"
                 aria-atomic="true"
               >
-                {submitted && (
+                {submitStatus === "success" && (
                   <p className="contact-success">
-                    Message received (demo). In production this would hit your inbox or
-                    API.
+                    {t("contact.sentSuccess")}
+                  </p>
+                )}
+                {submitStatus === "error" && submitError && (
+                  <p className="contact-error" role="alert">
+                    {submitError}
                   </p>
                 )}
               </div>
