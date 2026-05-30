@@ -247,27 +247,30 @@ export default function Contact() {
               </button>
             </div>
 
-            <p className="contact-meta">
-              <span className="contact-meta-label">{t("contact.timezone")}</span>
-              <span className="contact-meta-value">{t("contact.timezoneValue")}</span>
-            </p>
+            <div className="contact-meta-social-row">
+              <p className="contact-meta">
+                <span className="contact-meta-label">{t("contact.timezone")}</span>
+                <span className="contact-meta-value">{t("contact.timezoneValue")}</span>
+              </p>
 
-            <ul className="contact-socials">
-              {socials.map(({ label, href, icon }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    className="contact-social-link"
-                    {...(href.startsWith("mailto:")
-                      ? {}
-                      : { target: "_blank", rel: "noreferrer noopener" })}
-                  >
-                    {icon}
-                    <span>{label}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+              <ul className="contact-socials">
+                {socials.map(({ label, href, icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      className="contact-social-link"
+                      aria-label={label}
+                      {...(href.startsWith("mailto:")
+                        ? {}
+                        : { target: "_blank", rel: "noreferrer noopener" })}
+                    >
+                      {icon}
+                      <span>{label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </aside>
 
           <div className="contact-form-shell">

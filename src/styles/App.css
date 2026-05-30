@@ -32,10 +32,9 @@ h1, h2, h3, h4, h5, h6, p, span, div, section, article, nav, main, footer, a, bu
 }
 /* Modificación clave para el contenedor principal */
 .container {
-  max-width: 1200px;
-  width: 90%;
+  width: min(100% - 2 * var(--container-padding-x), 1200px);
   margin: 0 auto;
-  padding: 0 15px;
+  padding-inline: var(--container-padding-x);
   position: relative;
   z-index: 1;
 }

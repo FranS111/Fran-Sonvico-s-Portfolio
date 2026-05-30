@@ -40,14 +40,16 @@ export default function Intro() {
     <section id="intro" className="intro section-bleed">
       <div className="intro-container">
         <div className="intro-left">
-          <span className="intro-prompt">{t("intro.prompt")}</span>
-          <h1 className="intro-name">
-            Fran Sonvico
-            <span className="intro-name__caret" aria-hidden="true">
-              ▋
-            </span>
-          </h1>
-          <h2 className="intro-title">{t("intro.title")}</h2>
+          <div className="intro-hero">
+            <span className="intro-prompt">{t("intro.prompt")}</span>
+            <h1 className="intro-name">
+              Fran Sonvico
+              <span className="intro-name__caret" aria-hidden="true">
+                ▋
+              </span>
+            </h1>
+            <h2 className="intro-title">{t("intro.title")}</h2>
+          </div>
           <div className="intro-social-row">
             <div className="intro-available" title={t("intro.availableTitle")}>
               <span className="intro-available-dot" aria-hidden="true" />
@@ -59,6 +61,7 @@ export default function Intro() {
                   <a
                     href={href}
                     className="intro-social-link"
+                    aria-label={label}
                     {...(href.startsWith("mailto:")
                       ? {}
                       : { target: "_blank", rel: "noreferrer noopener" })}
@@ -70,7 +73,7 @@ export default function Intro() {
               ))}
             </ul>
           </div>
-          <div className="intro-accordion">
+          <div className="intro-accordion intro-accordion--desktop">
             <Accordion />
           </div>
         </div>

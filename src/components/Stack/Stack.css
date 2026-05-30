@@ -388,12 +388,139 @@
 }
 
 @media (max-width: 768px) {
+  .stack {
+    padding: 0.75rem 0 1.25rem;
+  }
+
+  .stack-panel {
+    padding: 0.65rem;
+    border-radius: 16px;
+  }
+
+  .stack-panel::after {
+    inset: 6px;
+    border-radius: 10px;
+    background-size: 18px 18px;
+  }
+
   .stack-grid {
     flex-direction: column;
+    gap: 0.85rem;
   }
 
   .stack-left,
   .stack-right {
     width: 100%;
+  }
+
+  .stack-left {
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  .stack-right {
+    gap: 0.5rem;
+  }
+
+  .stack-group-label {
+    margin-bottom: 0.35rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+  }
+
+  .stack-group-items {
+    gap: 0.35rem;
+  }
+
+  .stack-item {
+    padding: 0.3rem 0.55rem;
+    font-size: 0.68rem;
+    border-radius: 6px;
+    letter-spacing: 0.015em;
+  }
+
+  .tech-preview {
+    padding: 0.7rem 0.75rem;
+    border-radius: 14px;
+  }
+
+  .tech-preview-card h3 {
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .tech-preview-category {
+    margin-bottom: 0.3rem;
+    font-size: 0.68rem;
+  }
+
+  .tech-preview-card > p:not(.tech-preview-category) {
+    font-size: 0.8125rem;
+    line-height: 1.52;
+  }
+
+  .tech-preview-empty .hover-text {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .hover-text {
+    padding: 1.25rem 0.5rem;
+  }
+
+  .preview-tags {
+    margin-top: 0.5rem;
+    gap: 0.35rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .preview-tags::-webkit-scrollbar {
+    display: none;
+  }
+
+  .preview-tag {
+    font-size: 0.62rem;
+    padding: 0.18rem 0.45rem;
+  }
+
+  .stack-stats-line {
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-panel {
+    padding: 0.55rem;
+  }
+
+  .stack-item {
+    padding: 0.26rem 0.48rem;
+    font-size: 0.625rem;
+  }
+
+  .stack-group-label {
+    font-size: 0.65rem;
+  }
+
+  .tech-preview-card h3 {
+    font-size: 0.92rem;
+  }
+
+  .tech-preview-card > p:not(.tech-preview-category) {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .tech-preview-empty .hover-text {
+    font-size: 0.75rem;
+  }
+
+  .preview-tag {
+    font-size: 0.6rem;
+    padding: 0.16rem 0.4rem;
   }
 }

@@ -26,6 +26,18 @@
   --color-navbar-dark-text: #e6e6e6;
   --color-hover-dark: #151f29;
   --color-accent-dark-primary: #404258;
+
+  /* Responsive layout tokens */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 968px;
+  --bp-xl: 1024px;
+  --bp-projects: 980px;
+  --bp-section: 900px;
+
+  --container-padding-x: 15px;
+  --scroll-margin-top: 120px;
+  --nav-offset: 160px;
 }
 
 @keyframes caret-blink {
@@ -129,7 +141,22 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: 120px;
+  scroll-margin-top: var(--scroll-margin-top);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding-x: 18px;
+    --navbar-mobile-top: 10px;
+    --navbar-mobile-bar: 48px;
+    --scroll-margin-top: calc(var(--navbar-mobile-top) + var(--navbar-mobile-bar) + 10px);
+    --nav-offset: calc(var(--navbar-mobile-top) + var(--navbar-mobile-bar) + 6px);
+  }
+
+  section[id],
+  .experience-section {
+    scroll-margin-top: var(--scroll-margin-top);
+  }
 }
 
 body {

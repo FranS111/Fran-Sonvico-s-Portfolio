@@ -234,6 +234,122 @@
   }
 }
 
+@media (max-width: 768px) {
+  .experience-education {
+    padding: 0 1rem 1.5rem;
+    margin-top: 2.75rem;
+  }
+
+  .experience-section {
+    scroll-margin-top: var(--scroll-margin-top);
+  }
+
+  .experience-education-layout {
+    gap: 2.5rem;
+  }
+
+  .experience-section {
+    max-width: 100%;
+  }
+
+  #education.experience-section {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  #education .section-header--right,
+  #education .section-header--right .section-header__subtitle {
+    text-align: left;
+  }
+
+  #education .section-header--right .section-header__title {
+    justify-content: flex-start;
+  }
+
+  .experience-panel {
+    padding: 0.75rem;
+  }
+
+  .experience-item-card {
+    padding: 0.75rem 0.85rem;
+  }
+
+  #education .experience-item {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  #education .experience-item-period,
+  #education .experience-item-card {
+    order: initial;
+  }
+
+  #education .experience-item-period {
+    text-align: left;
+  }
+
+  #education .experience-item-card {
+    text-align: left;
+    box-shadow: inset 2px 0 0 0 var(--chip-tech-border);
+  }
+
+  #education .experience-item-card:hover {
+    transform: translateX(0);
+    box-shadow: inset 2px 0 0 0 var(--accent-cyan);
+  }
+
+  #education .experience-tags {
+    justify-content: flex-start;
+  }
+
+  .experience-item-period {
+    font-size: 0.65rem;
+    padding: 0.18rem 0.45rem;
+  }
+
+  .experience-item-heading {
+    font-size: 0.88rem;
+    line-height: 1.3;
+  }
+
+  .experience-item-card p {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-top: 0.4rem;
+  }
+
+  .experience-tags {
+    margin-top: 0.6rem;
+    gap: 0.35rem;
+  }
+
+  .experience-tag {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.45rem;
+  }
+
+  .experience-tag::before {
+    margin-right: 0.28em;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-item-heading {
+    font-size: 0.82rem;
+    line-height: 1.28;
+  }
+
+  .experience-item-card p {
+    font-size: 0.75rem;
+    line-height: 1.48;
+  }
+
+  .experience-tag {
+    font-size: 0.625rem;
+    padding: 0.18rem 0.4rem;
+  }
+}
+
 @media (max-width: 900px) {
   .experience-item {
     grid-template-columns: 1fr;
