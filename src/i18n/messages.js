@@ -47,10 +47,10 @@ export const messages = {
     accordion: {
       about: "About Me",
       aboutContent:
-        "I'm a passionate fullstack developer with experience in React, Node.js, and more. I love creating user-friendly applications.",
+        "I love turning complex ideas into clean, intuitive interfaces. Creative fullstack dev: modular, reusable components built to scale. Shaped by art & architecture design and engineering with equal passion.",
       skills: "Skills",
       skillsContent:
-        "Proficient in JavaScript, HTML, CSS, React, Node.js, SQL, and modern web technologies. Always learning new tools.",
+        "JS/React frontends; Java, PHP, Laravel backends; SQL, MySQL, MongoDB. Enterprise UI, permissions, filtering, CRUD, APIs. Agile delivery & performance tuning.",
     },
     stack: {
       title: "TechStack",
@@ -172,10 +172,10 @@ export const messages = {
     accordion: {
       about: "Sobre mí",
       aboutContent:
-        "Soy un desarrollador fullstack apasionado con experiencia en React, Node.js y más tecnologías. Me encanta crear aplicaciones fáciles de usar.",
+        "Creo software pensando en las personas. Me mueve el diseño, la UX y piezas reutilizables que escalan sin perder alma. Dev fullstack creativo — inspirado en música, arte y arquitectura.",
       skills: "Habilidades",
       skillsContent:
-        "Con dominio de JavaScript, HTML, CSS, React, Node.js, SQL y tecnologías web modernas. Siempre aprendiendo nuevas herramientas.",
+        "JS/React; Java, PHP, Laravel; SQL, MySQL y MongoDB. UI empresarial, permisos, filtrado, CRUD y APIs. Livewire, Blade y optimización en producción.",
     },
     stack: {
       title: "TechStack",

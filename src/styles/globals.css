@@ -148,7 +148,7 @@ section[id] {
   :root {
     --container-padding-x: 18px;
     --navbar-mobile-top: 10px;
-    --navbar-mobile-bar: 48px;
+    --navbar-mobile-bar: 44px;
     --scroll-margin-top: calc(var(--navbar-mobile-top) + var(--navbar-mobile-bar) + 10px);
     --nav-offset: calc(var(--navbar-mobile-top) + var(--navbar-mobile-bar) + 6px);
   }
