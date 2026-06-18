@@ -35,6 +35,8 @@ const TECH_ORIGIN_SECTION = {
   MongoDB: "education",
 };
 
+const MOBILE_BP = "(max-width: 768px)";
+
 function normalizeTag(value) {
   return (value ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
 }
@@ -121,6 +123,8 @@ export default function Stack() {
   }
 
   function handleTechClick(tech) {
+    if (window.matchMedia(MOBILE_BP).matches) return;
+
     const destinationId = getTechDestination(tech);
     if (!destinationId) return;
     document

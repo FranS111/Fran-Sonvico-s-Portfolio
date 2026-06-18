@@ -437,6 +437,7 @@
     font-size: 0.68rem;
     border-radius: 6px;
     letter-spacing: 0.015em;
+    cursor: default;
   }
 
   .tech-preview {

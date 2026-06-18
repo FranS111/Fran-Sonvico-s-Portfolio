@@ -229,7 +229,7 @@ export default function Contact() {
               <p className="contact-terminal-line">
                 <span className="contact-terminal-k">//</span> {t("contact.preferredStack")}:{" "}
                 <span className="contact-terminal-v">
-                  React · TypeScript · Node.js
+                  React · Javascript · Java  
                 </span>
               </p>
             </div>
