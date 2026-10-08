@@ -5,6 +5,16 @@ import { CONTACT_EMAIL, getSocials } from "../../data/socials";
 import useI18n from "../../hooks/useI18n";
 
 const MIN_MESSAGE_LEN = 20;
+const FIELD_MAX = {
+  companyName: 100,
+  contactName: 80,
+  jobTitle: 80,
+  firstName: 80,
+  lastName: 80,
+  email: 254,
+  phone: 30,
+  message: 2000,
+};
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT?.trim() ?? "";
 
 const initialForm = {
@@ -89,7 +99,9 @@ export default function Contact() {
   }, [language, t]);
 
   function update(field, value) {
-    setForm((prev) => ({ ...prev, [field]: value }));
+    const max = FIELD_MAX[field];
+    const nextValue = typeof max === "number" ? value.slice(0, max) : value;
+    setForm((prev) => ({ ...prev, [field]: nextValue }));
     if (errors[field]) {
       setErrors((prev) => {
         const next = { ...prev };
@@ -105,16 +117,38 @@ export default function Contact() {
       next.email = t("contact.errors.emailRequired");
     } else if (!isValidEmail(form.email)) {
       next.email = t("contact.errors.emailInvalid");
+    } else if (form.email.length > FIELD_MAX.email) {
+      next.email = t("contact.errors.fieldMax", { max: FIELD_MAX.email });
     }
     if (!form.message.trim() || form.message.trim().length < MIN_MESSAGE_LEN) {
       next.message = t("contact.errors.messageMin", { min: MIN_MESSAGE_LEN });
+    } else if (form.message.length > FIELD_MAX.message) {
+      next.message = t("contact.errors.messageMax", { max: FIELD_MAX.message });
     }
     if (form.inquiryType === "company") {
       if (!form.companyName.trim()) next.companyName = t("contact.errors.companyNameRequired");
+      else if (form.companyName.length > FIELD_MAX.companyName) {
+        next.companyName = t("contact.errors.fieldMax", { max: FIELD_MAX.companyName });
+      }
       if (!form.contactName.trim()) next.contactName = t("contact.errors.contactNameRequired");
+      else if (form.contactName.length > FIELD_MAX.contactName) {
+        next.contactName = t("contact.errors.fieldMax", { max: FIELD_MAX.contactName });
+      }
+      if (form.jobTitle.length > FIELD_MAX.jobTitle) {
+        next.jobTitle = t("contact.errors.fieldMax", { max: FIELD_MAX.jobTitle });
+      }
     } else {
       if (!form.firstName.trim()) next.firstName = t("contact.errors.firstNameRequired");
+      else if (form.firstName.length > FIELD_MAX.firstName) {
+        next.firstName = t("contact.errors.fieldMax", { max: FIELD_MAX.firstName });
+      }
       if (!form.lastName.trim()) next.lastName = t("contact.errors.lastNameRequired");
+      else if (form.lastName.length > FIELD_MAX.lastName) {
+        next.lastName = t("contact.errors.fieldMax", { max: FIELD_MAX.lastName });
+      }
+    }
+    if (form.phone.length > FIELD_MAX.phone) {
+      next.phone = t("contact.errors.fieldMax", { max: FIELD_MAX.phone });
     }
     setErrors(next);
     return Object.keys(next).length === 0;
@@ -310,6 +344,7 @@ export default function Contact() {
                       type="text"
                       name="companyName"
                       autoComplete="organization"
+                      maxLength={FIELD_MAX.companyName}
                       value={form.companyName}
                       onChange={(e) => update("companyName", e.target.value)}
                       className={errors.companyName ? "contact-input contact-input--error" : "contact-input"}
@@ -330,6 +365,7 @@ export default function Contact() {
                         type="text"
                         name="contactName"
                         autoComplete="name"
+                        maxLength={FIELD_MAX.contactName}
                         value={form.contactName}
                         onChange={(e) => update("contactName", e.target.value)}
                         className={errors.contactName ? "contact-input contact-input--error" : "contact-input"}
@@ -349,10 +385,18 @@ export default function Contact() {
                         type="text"
                         name="jobTitle"
                         autoComplete="organization-title"
+                        maxLength={FIELD_MAX.jobTitle}
                         value={form.jobTitle}
                         onChange={(e) => update("jobTitle", e.target.value)}
-                        className="contact-input"
+                        className={errors.jobTitle ? "contact-input contact-input--error" : "contact-input"}
+                        aria-invalid={!!errors.jobTitle}
+                        aria-describedby={errors.jobTitle ? `${baseId}-role-err` : undefined}
                       />
+                      {errors.jobTitle && (
+                        <span id={`${baseId}-role-err`} className="contact-field-error" role="alert">
+                          {errors.jobTitle}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -366,6 +410,7 @@ export default function Contact() {
                         type="text"
                         name="firstName"
                         autoComplete="given-name"
+                        maxLength={FIELD_MAX.firstName}
                         value={form.firstName}
                         onChange={(e) => update("firstName", e.target.value)}
                         className={errors.firstName ? "contact-input contact-input--error" : "contact-input"}
@@ -385,6 +430,7 @@ export default function Contact() {
                         type="text"
                         name="lastName"
                         autoComplete="family-name"
+                        maxLength={FIELD_MAX.lastName}
                         value={form.lastName}
                         onChange={(e) => update("lastName", e.target.value)}
                         className={errors.lastName ? "contact-input contact-input--error" : "contact-input"}
@@ -408,6 +454,7 @@ export default function Contact() {
                   type="email"
                   name="email"
                   autoComplete="email"
+                  maxLength={FIELD_MAX.email}
                   value={form.email}
                   onChange={(e) => update("email", e.target.value)}
                   className={errors.email ? "contact-input contact-input--error" : "contact-input"}
@@ -428,10 +475,18 @@ export default function Contact() {
                   type="tel"
                   name="phone"
                   autoComplete="tel"
+                  maxLength={FIELD_MAX.phone}
                   value={form.phone}
                   onChange={(e) => update("phone", e.target.value)}
-                  className="contact-input"
+                  className={errors.phone ? "contact-input contact-input--error" : "contact-input"}
+                  aria-invalid={!!errors.phone}
+                  aria-describedby={errors.phone ? `${baseId}-phone-err` : undefined}
                 />
+                {errors.phone && (
+                  <span id={`${baseId}-phone-err`} className="contact-field-error" role="alert">
+                    {errors.phone}
+                  </span>
+                )}
               </div>
 
               <div className="contact-field">
@@ -440,6 +495,7 @@ export default function Contact() {
                   id={`${baseId}-message`}
                   name="message"
                   rows={5}
+                  maxLength={FIELD_MAX.message}
                   value={form.message}
                   onChange={(e) => update("message", e.target.value)}
                   className={errors.message ? "contact-input contact-textarea contact-input--error" : "contact-input contact-textarea"}

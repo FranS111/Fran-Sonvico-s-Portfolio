@@ -56,6 +56,28 @@ const experienceByLang = {
 const educationByLang = {
   EN: [
     {
+      period: "2026 - Present",
+      role: "B.S. in Software Engineering (Software Development & Testing)",
+      company: "Joint Degree: UOC, OUNL & UNED",
+      description:
+        "Online international bachelor's covering the full software lifecycle: programming, software architecture, testing, UX, web and mobile development, cloud computing, systems, and cybersecurity.",
+      tags: [
+        "Software Engineering",
+        "Testing",
+        "Cloud",
+        "Web & Mobile",
+        "UX",
+      ],
+    },
+    {
+      period: "2026",
+      role: "Cambridge English C1 Advanced (CAE)",
+      company: "Cambridge Assessment English",
+      description:
+        "Certified advanced English proficiency (CEFR C1): fluent professional communication, complex texts, and confident spoken and written expression in international contexts.",
+      tags: ["CEFR", "Cambridge"],
+    },
+    {
       period: "2022 - 2024",
       role: "Higher Technical Degree in Multi-platform Applications Development (DAM)",
       company: "STUCOM Pelai · Centre d'estudis",
@@ -73,6 +95,28 @@ const educationByLang = {
     },
   ],
   ES: [
+    {
+      period: "2026 - Actualidad",
+      role: "Grado en Ingeniería de Software (Desarrollo y pruebas de Software)",
+      company: "Interuniversitario: UOC, OUNL, UNED",
+      description:
+        "Grado internacional online centrado en el ciclo de vida del software: programación, arquitectura, pruebas, UX, desarrollo web y móvil, cloud computing, sistemas y ciberseguridad.",
+      tags: [
+        "Ingeniería de Software",
+        "Testing",
+        "Cloud",
+        "Web y Mobile",
+        "UX",
+      ],
+    },
+    {
+      period: "2026",
+      role: "Cambridge English C1 Advanced (CAE)",
+      company: "Cambridge Assessment English",
+      description:
+        "Certificación de inglés avanzado (MCER C1): comunicación profesional fluida, comprensión de textos complejos y expresión oral y escrita con soltura en contextos internacionales.",
+      tags: ["MCER", "Cambridge"],
+    },
     {
       period: "2022 - 2024",
       role: "CFGS en Desarrollo de Aplicaciones Multiplataforma (DAM)",
