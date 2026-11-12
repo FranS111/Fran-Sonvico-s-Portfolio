@@ -21,10 +21,15 @@ export default function Projects() {
             key={project.title}
             className={`project-card project-card--${project.layout} ${project.compact ? "project-card--compact" : ""} ${!project.compact && (project.collection || project.highlights) ? "project-card--collection" : ""}`}
           >
-            <p className="project-label">
-              {project.label ??
-                (project.collection ? t("projects.damGithub") : t("projects.caseStudy"))}
-            </p>
+            <div className="project-card__meta">
+              <p className="project-label">
+                {project.label ??
+                  (project.collection ? t("projects.damGithub") : t("projects.caseStudy"))}
+              </p>
+              {project.status ? (
+                <span className="project-status">{project.status}</span>
+              ) : null}
+            </div>
             <h4>{project.title}</h4>
             <p>{project.desc}</p>
 

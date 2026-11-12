@@ -7,6 +7,7 @@ import { getProjectsContent } from "../../data/projects";
 import useI18n from "../../hooks/useI18n";
 
 const PROJECT_PRIORITY = {
+  "Wildlife Encyclopedia": 420,
   Dwit: 400,
   "Dwit · ISS CRM": 320,
   "This Portfolio": 260,

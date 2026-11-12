@@ -132,6 +132,62 @@ export function getProjectsContent(language = "EN") {
 
   return [
     {
+      title: lang === "ES" ? "Wildlife Encyclopedia" : "Wildlife Encyclopedia",
+      label: lang === "ES" ? "// en curso · personal" : "// ongoing · personal",
+      status: lang === "ES" ? "En curso" : "Ongoing",
+      desc:
+        lang === "ES"
+          ? "App web moderna, calmada e inspirada en la naturaleza para explorar especies animales. Proyecto en curso orientado a craft frontend: design system, arquitectura de componentes, accesibilidad, rendimiento y testing — camino Frontend Architect / Design Engineer."
+          : "A modern, calm, nature-inspired web app for browsing and exploring animal species. Ongoing build focused on frontend craft: design system, component architecture, accessibility, performance, and testing — aimed at a Frontend Architect / Design Engineer path.",
+      highlights:
+        lang === "ES"
+          ? [
+              {
+                title: "Design system & tokens",
+                badge: "UI · Tokens",
+                desc: "Tailwind CSS con design tokens (variables CSS) para color, spacing, radius, tipografía y motion, manteniendo una UI coherente y escalable.",
+              },
+              {
+                title: "Arquitectura & accesibilidad",
+                badge: "A11y · Components",
+                desc: "Arquitectura de componentes reutilizable con foco en accesibilidad y experiencia de exploración clara en desktop y móvil.",
+              },
+              {
+                title: "SSG & rendimiento",
+                badge: "Next.js · Perf",
+                desc: "Next.js App Router + React + TypeScript (strict), con generación estática (SSG) en páginas de especies para velocidad y SEO.",
+              },
+            ]
+          : [
+              {
+                title: "Design system & tokens",
+                badge: "UI · Tokens",
+                desc: "Tailwind CSS with design tokens (CSS variables) for color, spacing, radius, typography, and motion—keeping the UI coherent and scalable.",
+              },
+              {
+                title: "Architecture & accessibility",
+                badge: "A11y · Components",
+                desc: "Reusable component architecture with a strong accessibility focus and a clear exploration experience across desktop and mobile.",
+              },
+              {
+                title: "SSG & performance",
+                badge: "Next.js · Perf",
+                desc: "Next.js App Router + React + TypeScript (strict), with static generation (SSG) for species pages to favor speed and SEO.",
+              },
+            ],
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "SSG",
+        "Design System",
+        "A11y",
+        "Testing",
+      ],
+      layout: "full",
+    },
+    {
       title: "Dwit",
       label: lang === "ES" ? "// cimkey · enterprise" : "// cimkey · enterprise",
       desc:
