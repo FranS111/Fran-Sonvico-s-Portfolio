@@ -39,7 +39,7 @@ export const messages = {
         "engineering best practices",
         "technical documentation",
       ],
-      p1: "Fullstack Developer with 2+ years of experience building and optimizing enterprise web applications. Working across the full lifecycle—from robust backend architecture to seamless user interfaces—with a long-term focus on the Frontend ecosystem.",
+      p1: "Fullstack Developer with 3 years of experience building and optimizing enterprise web applications. Working across the full lifecycle—from robust backend architecture to seamless user interfaces—with a long-term focus on the Frontend ecosystem.",
       p2: "Beyond writing code, I combine a solid technical foundation with lateral thinking and an aesthetic sensibility shaped by music, art, and architecture—bringing both visual craft and novel solutions to complex problems. I care deeply about UX and interaction design: interfaces that are intuitive and appealing, yet technically efficient and optimized for system performance, delivering real end-to-end business value.",
       p3: "Adept at managing full-stack cohesion, managing complex data flows and designing modular architectures with reusable, maintainable components for large, long-term projects. I have cut critical loading times from seconds to near-instant response, maintained platforms in production, and handled demanding large-scale projects.",
       p4: "Thrive in high-collaboration Agile environments, with a strong commitment to promoting continuous learning, engineering best practices, and high-quality technical documentation.",
@@ -50,7 +50,13 @@ export const messages = {
         "I love turning complex ideas into clean, intuitive interfaces. Creative fullstack dev: modular, reusable components built to scale. Shaped by art & architecture design and engineering with equal passion.",
       skills: "Skills",
       skillsContent:
-        "JS/React frontends; Java, PHP, Laravel backends; SQL, MySQL, MongoDB. Enterprise UI, permissions, filtering, CRUD, APIs. Agile delivery & performance tuning.",
+        "Angular, React, Next.js & TypeScript frontends; Java, .NET, PHP/Laravel backends; Tailwind CSS, SQL/PL/SQL. Enterprise UI, APIs, CRUD & performance in Agile teams.",
+    },
+    duration: {
+      year: "year",
+      years: "years",
+      month: "month",
+      months: "months",
     },
     stack: {
       title: "TechStack",
@@ -166,7 +172,7 @@ export const messages = {
         "buenas prácticas de ingeniería",
         "documentación técnica de calidad",
       ],
-      p1: "Desarrollador Fullstack con más de 2 años de experiencia construyendo y optimizando aplicaciones web empresariales. Trabajo a lo largo de todo el ciclo de vida desde arquitectura backend robusta hasta interfaces de usuario fluidas con foco a largo plazo en el ecosistema Frontend.",
+      p1: "Desarrollador Fullstack con 3 años de experiencia construyendo y optimizando aplicaciones web empresariales. Trabajo a lo largo de todo el ciclo de vida desde arquitectura backend robusta hasta interfaces de usuario fluidas con foco a largo plazo en el ecosistema Frontend.",
       p2: "Más allá de programar, combino una base técnica sólida con pensamiento lateral y una sensibilidad estética influida por la música, el arte y la arquitectura; aportando tanto calidad visual como soluciones novedosas a problemas complejos. Me apasiona especialmente el diseño de UX y el diseño de interacción: interfaces intuitivas y atractivas, pero también eficientes técnicamente y optimizadas para rendimiento del sistema, entregando valor real end-to-end.",
       p3: "Cuento con experiencia demostrada en cohesión full-stack, gestión de flujos de datos complejos y diseño de arquitecturas modulares basadas en componentes reutilizables y mantenibles para proyectos de gran envergadura. A lo largo de mi trayectoria, he logrado reducir tiempos de carga críticos de varios segundos a respuestas casi instantáneas, además de mantener plataformas en producción y gestionar requerimientos de alta exigencia.",
       p4: "Me integro y desenvuelvo con soltura en entornos Agile de alta colaboración, manteniendo un firme compromiso con el aprendizaje continuo, las buenas prácticas de ingeniería y la documentación técnica de calidad.",
@@ -177,7 +183,13 @@ export const messages = {
         "Creo software pensando en las personas. Me mueve el diseño, la UX y piezas reutilizables que escalan sin perder alma. Dev fullstack creativo — inspirado en música, arte y arquitectura.",
       skills: "Habilidades",
       skillsContent:
-        "JS/React; Java, PHP, Laravel; SQL, MySQL y MongoDB. UI empresarial, permisos, filtrado, CRUD y APIs. Livewire, Blade y optimización en producción.",
+        "Frontends Angular, React, Next.js y TypeScript; backends Java, .NET, PHP/Laravel; Tailwind CSS, SQL/PL/SQL. UI empresarial, APIs, CRUD y rendimiento en equipos Agile.",
+    },
+    duration: {
+      year: "año",
+      years: "años",
+      month: "mes",
+      months: "meses",
     },
     stack: {
       title: "TechStack",

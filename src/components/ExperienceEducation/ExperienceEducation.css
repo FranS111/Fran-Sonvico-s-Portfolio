@@ -62,8 +62,11 @@
   grid-template-columns: 1fr var(--experience-period-col);
 }
 
-#education .experience-item-period {
+#education .experience-item-side {
   order: 2;
+}
+
+#education .experience-item-period {
   text-align: right;
 }
 
@@ -114,6 +117,14 @@
   align-items: start;
 }
 
+.experience-item-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+  min-width: 0;
+}
+
 .experience-item-period {
   display: block;
   width: 100%;
@@ -132,6 +143,15 @@
   overflow-wrap: break-word;
   word-break: break-word;
   box-sizing: border-box;
+}
+
+.experience-item-duration {
+  margin-top: 0;
+  color: var(--accent-cyan);
+}
+
+.experience-item-side .experience-item-period:first-child {
+  margin-top: 0.2rem;
 }
 
 .experience-item-card {
@@ -279,7 +299,7 @@
     gap: 0.55rem;
   }
 
-  #education .experience-item-period,
+  #education .experience-item-side,
   #education .experience-item-card {
     order: initial;
   }
@@ -356,9 +376,13 @@
     gap: 0.55rem;
   }
 
-  #education .experience-item-period,
+  #education .experience-item-side,
   #education .experience-item-card {
     order: initial;
+  }
+
+  #education .experience-item-period {
+    text-align: left;
   }
 
   #education .experience-item-card {

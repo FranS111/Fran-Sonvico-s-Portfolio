@@ -3,9 +3,15 @@ const stackGroupsBase = [
     labelKey: "frontend",
     items: [
       "JavaScript",
+      "TypeScript",
       "React",
+      "Next.js",
+      "Angular",
+      "Vue.js",
       "HTML5",
       "CSS3",
+      "SASS",
+      "Tailwind CSS",
       "Livewire",
       "Blade",
       "jQuery",
@@ -16,7 +22,7 @@ const stackGroupsBase = [
   },
   {
     labelKey: "backend",
-    items: ["Java", "PHP", "Laravel", "C#", "Python"],
+    items: ["Java", "PHP", "Laravel", "Node.js", ".NET", "C#", "Python"],
   },
   {
     labelKey: "database",
@@ -28,17 +34,52 @@ const stackPreviewsByLang = {
   EN: {
     JavaScript: {
       title: "Enterprise data-sheet platform",
-      desc: "Front-end architecture and scalable filtering synced with Java backends at Cimkey (Dwit).",
+      desc: "Front-end architecture and scalable filtering on Dwit, synced with Java and .NET services at Cimkey.",
       tags: ["JavaScript", "HTML5", "CSS3"],
+    },
+    TypeScript: {
+      title: "Typed frontend craft",
+      desc: "Strict TypeScript across Wildlife Encyclopedia (Next.js) and typed Angular modules in enterprise UI work.",
+      tags: ["TypeScript", "React", "Angular"],
     },
     React: {
       title: "Portfolio & client UIs",
       desc: "Component-driven interfaces with focus on performance and modular architecture.",
       tags: ["React", "JavaScript"],
     },
+    "Next.js": {
+      title: "Wildlife Encyclopedia",
+      desc: "App Router + React + TypeScript with static generation (SSG) for species pages—performance, SEO, and design-system driven UI.",
+      tags: ["Next.js", "React", "TypeScript"],
+    },
+    Angular: {
+      title: "Dwit enterprise UI (Cimkey)",
+      desc: "Angular feature modules, reusable components, and reactive forms for structural data-sheet workflows on Dwit.",
+      tags: ["Angular", "TypeScript", "JavaScript"],
+    },
+    "Vue.js": {
+      title: "Component-driven UIs",
+      desc: "Lightweight reactive interfaces and reusable components for fast, clear product experiences.",
+      tags: ["Vue.js", "JavaScript"],
+    },
+    "Tailwind CSS": {
+      title: "Dwit & Wildlife styling",
+      desc: "Utility-first styling on Dwit enterprise UI at Cimkey, and design-token systems in Wildlife Encyclopedia.",
+      tags: ["Tailwind CSS", "CSS3"],
+    },
+    "Node.js": {
+      title: "JavaScript backend services",
+      desc: "Server-side JavaScript for APIs, tooling, and full-stack delivery alongside modern frontend stacks.",
+      tags: ["Node.js", "JavaScript"],
+    },
+    ".NET": {
+      title: "Cimkey platform services",
+      desc: ".NET services supporting Dwit data-sheet flows and ISS logistics CRM screens alongside Java backends.",
+      tags: [".NET", "C#"],
+    },
     Java: {
       title: "Fullstack cohesion (Dwit)",
-      desc: "Server-side flows for permissions, roles, and data-sheet lifecycle—optimized for fast delivery under concurrent enterprise use.",
+      desc: "Server-side flows for permissions, roles, and data-sheet lifecycle—coordinated with Angular UI and .NET services under concurrent enterprise use.",
       tags: ["Java", "JavaScript"],
     },
     Laravel: {
@@ -99,23 +140,63 @@ const stackPreviewsByLang = {
     CSS3: {
       title: "Enterprise UI styling",
       desc: "Responsive layouts and component styling across client and internal platforms.",
-      tags: ["CSS3", "SASS"],
+      tags: ["CSS3"],
+    },
+    SASS: {
+      title: "Structured stylesheets",
+      desc: "SASS/SCSS for maintainable style architecture—variables, nesting, and modular stylesheets in product UIs.",
+      tags: ["SASS", "CSS3"],
     },
   },
   ES: {
     JavaScript: {
       title: "Plataforma empresarial de fichas técnicas",
-      desc: "Arquitectura frontend y filtrado escalable sincronizado con backends Java en Cimkey (Dwit).",
+      desc: "Arquitectura frontend y filtrado escalable en Dwit, sincronizado con servicios Java y .NET en Cimkey.",
       tags: ["JavaScript", "HTML5", "CSS3"],
+    },
+    TypeScript: {
+      title: "Frontend tipado",
+      desc: "TypeScript strict en Wildlife Encyclopedia (Next.js) y módulos Angular tipados en UI empresarial.",
+      tags: ["TypeScript", "React", "Angular"],
     },
     React: {
       title: "Portfolio e interfaces cliente",
       desc: "Interfaces orientadas a componentes con foco en rendimiento y arquitectura modular.",
       tags: ["React", "JavaScript"],
     },
+    "Next.js": {
+      title: "Wildlife Encyclopedia",
+      desc: "App Router + React + TypeScript con generación estática (SSG) en páginas de especies—rendimiento, SEO y UI basada en design system.",
+      tags: ["Next.js", "React", "TypeScript"],
+    },
+    Angular: {
+      title: "UI empresarial Dwit (Cimkey)",
+      desc: "Módulos Angular, componentes reutilizables y formularios reactivos para flujos de fichas técnicas en Dwit.",
+      tags: ["Angular", "TypeScript", "JavaScript"],
+    },
+    "Vue.js": {
+      title: "UIs orientadas a componentes",
+      desc: "Interfaces reactivas ligeras y componentes reutilizables para experiencias de producto claras y rápidas.",
+      tags: ["Vue.js", "JavaScript"],
+    },
+    "Tailwind CSS": {
+      title: "Estilos Dwit y Wildlife",
+      desc: "Estilos utility-first en la UI empresarial de Dwit (Cimkey) y sistemas de tokens en Wildlife Encyclopedia.",
+      tags: ["Tailwind CSS", "CSS3"],
+    },
+    "Node.js": {
+      title: "Servicios backend en JavaScript",
+      desc: "JavaScript en servidor para APIs, tooling y entrega full-stack junto a stacks frontend modernos.",
+      tags: ["Node.js", "JavaScript"],
+    },
+    ".NET": {
+      title: "Servicios de plataforma Cimkey",
+      desc: "Servicios .NET para flujos de fichas en Dwit y pantallas del CRM logístico ISS junto a backends Java.",
+      tags: [".NET", "C#"],
+    },
     Java: {
       title: "Cohesión fullstack (Dwit)",
-      desc: "Flujos server-side para permisos, roles y ciclo de vida de fichas técnicas optimizados para concurrencia empresarial.",
+      desc: "Flujos server-side de permisos, roles y ciclo de vida de fichas—coordinados con UI Angular y servicios .NET bajo concurrencia empresarial.",
       tags: ["Java", "JavaScript"],
     },
     Laravel: {
@@ -176,7 +257,12 @@ const stackPreviewsByLang = {
     CSS3: {
       title: "Estilos UI empresariales",
       desc: "Layouts responsivos y estilos de componentes en plataformas internas y de cliente.",
-      tags: ["CSS3", "SASS"],
+      tags: ["CSS3"],
+    },
+    SASS: {
+      title: "Hojas de estilo estructuradas",
+      desc: "SASS/SCSS para arquitectura de estilos mantenible—variables, anidación y hojas modulares en UIs de producto.",
+      tags: ["SASS", "CSS3"],
     },
   },
 };

@@ -5,24 +5,26 @@ const experienceByLang = {
       role: "Fullstack Web Developer",
       company: "Cimkey",
       description:
-        "Led frontend architecture and interaction design on Dwit, an enterprise B2B platform for structural technical data sheets. Built scalable, modular filtering components with seamless JavaScript–Java state sync; redesigned permission-aware navigation to cut load times from seconds to instant response; and streamlined backend data flows to keep delivery fast under concurrent users. Maintained ISS logistics CRM in production while owning work end-to-end—from UI design through pre-production—with Agile coordination and technical documentation.",
+        "Led frontend architecture and interaction design on Dwit, an enterprise B2B platform for structural technical data sheets. Built Angular feature modules and reusable UI components styled with Tailwind CSS; kept complex filters and forms in sync with Java and .NET services; redesigned permission-aware navigation to cut load times from seconds to instant response; and streamlined backend data flows under concurrent use. Maintained ISS logistics CRM in production—extending JavaScript/.NET screens and PL/SQL-backed flows—while owning work end-to-end from UI through pre-production with Agile coordination and technical documentation.",
       tags: [
         "JavaScript",
         "Java",
+        "Angular",
+        "Tailwind CSS",
+        ".NET",
         "HTML5",
         "CSS3",
         "PL/SQL",
-        "UI Architecture",
         "Agile",
       ],
     },
     {
-      period: "OCT 2023 - JUN 2024",
+      period: "JUL 2023 - FEB 2025",
       role: "Fullstack Web Developer",
       company: "New Strategy In Action S.L. (Strategying)",
       description:
         "Independently built an internal real-time analytics dashboard with Laravel migrations and third-party API integrations. Delivered modular Livewire components, Context API state, and CRUD flows with dynamic filtering and pagination for Momento Seguros and Smurfit Kappa client apps, including localization, validation, and full QA coverage.",
-      tags: ["Laravel", "PHP", "Livewire", "JavaScript", "Blade", "MySQL", "Agile"],
+      tags: ["Laravel", "PHP", "Livewire", "React", "JavaScript", "Blade", "MySQL", "Agile"],
     },
   ],
   ES: [
@@ -31,24 +33,26 @@ const experienceByLang = {
       role: "Desarrollador Web Fullstack",
       company: "Cimkey",
       description:
-        "Colaboré enormemente en la arquitectura frontend y el diseño de interacción en Dwit, una plataforma B2B empresarial para fichas técnicas estructurales. Construí componentes de filtrado modulares y escalables con sincronización de estado JavaScript–Java; rediseñé la navegación por permisos para reducir cargas de segundos a respuesta instantánea; y optimicé flujos de datos backend para mantener velocidad bajo alta concurrencia. También mantuve en producción el CRM logístico de ISS, gestionando el ciclo end-to-end desde UI hasta preproducción con coordinación Agile y documentación técnica.",
+        "Colaboré enormemente en la arquitectura frontend y el diseño de interacción en Dwit, una plataforma B2B empresarial para fichas técnicas estructurales. Construí módulos Angular y componentes UI reutilizables con Tailwind CSS; mantuve filtros y formularios complejos sincronizados con servicios Java y .NET; rediseñé la navegación por permisos para reducir cargas de segundos a respuesta instantánea; y optimicé flujos de datos bajo alta concurrencia. También mantuve en producción el CRM logístico de ISS—ampliando pantallas JavaScript/.NET y flujos respaldados en PL/SQL—gestionando el ciclo end-to-end desde UI hasta preproducción con coordinación Agile y documentación técnica.",
       tags: [
         "JavaScript",
         "Java",
+        "Angular",
+        "Tailwind CSS",
+        ".NET",
         "HTML5",
         "CSS3",
         "PL/SQL",
-        "Arquitectura UI",
         "Agile",
       ],
     },
     {
-      period: "OCT 2023 - JUN 2024",
+      period: "JUL 2023 - FEB 2025",
       role: "Desarrollador Web Fullstack",
       company: "New Strategy In Action S.L. (Strategying)",
       description:
         "Desarrollé de forma autónoma un dashboard interno de analítica en tiempo real con migraciones en Laravel e integraciones con APIs de terceros. Entregué componentes modulares con Livewire, estado con Context API y flujos CRUD con filtros dinámicos y paginación para aplicaciones de clientes como Momento Seguros y Smurfit Kappa, incluyendo localización, validaciones y QA completo.",
-      tags: ["Laravel", "PHP", "Livewire", "JavaScript", "Blade", "MySQL", "Agile"],
+      tags: ["Laravel", "PHP", "Livewire", "React","JavaScript", "Blade", "MySQL", "Agile"],
     },
   ],
 };
@@ -146,7 +150,7 @@ const panelsByLang = {
     education: {
       index: "02",
       name: "Education",
-      subtitle: "Formal training in multi-platform software development",
+      subtitle: "Formal training in software engineering",
     },
   },
   ES: {
@@ -158,7 +162,7 @@ const panelsByLang = {
     education: {
       index: "02",
       name: "Formación",
-      subtitle: "Formación formal en desarrollo de software multiplataforma",
+      subtitle: "Formación formal en ingeniería de software",
     },
   },
 };

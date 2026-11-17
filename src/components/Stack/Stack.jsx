@@ -17,12 +17,23 @@ const PROJECT_PRIORITY = {
 };
 
 const TAG_ALIASES = {
-  css3: ["css", "csssass", "sass"],
-  csssass: ["css3", "css", "sass"],
+  css3: ["css"],
+  sass: ["scss"],
+  scss: ["sass"],
   html5: ["html"],
   plsql: ["sql", "mysql"],
   sql: ["plsql", "mysql"],
   javascript: ["js"],
+  typescript: ["ts"],
+  nextjs: ["next"],
+  next: ["nextjs"],
+  vuejs: ["vue"],
+  vue: ["vuejs"],
+  nodejs: ["node"],
+  node: ["nodejs"],
+  tailwindcss: ["tailwind"],
+  tailwind: ["tailwindcss"],
+  dotnet: ["net", "csharp", "c"],
 };
 
 const TECH_ORIGIN_SECTION = {
@@ -30,6 +41,11 @@ const TECH_ORIGIN_SECTION = {
   Blade: "experience",
   jQuery: "experience",
   Laravel: "experience",
+  Angular: "experience",
+  "Tailwind CSS": "experience",
+  ".NET": "experience",
+  "Next.js": "projects",
+  TypeScript: "projects",
   AJAX: "education",
   Flutter: "education",
   Python: "education",

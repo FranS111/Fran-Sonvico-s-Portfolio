@@ -263,7 +263,7 @@ export default function Contact() {
               <p className="contact-terminal-line">
                 <span className="contact-terminal-k">//</span> {t("contact.preferredStack")}:{" "}
                 <span className="contact-terminal-v">
-                  React · Javascript · Java  
+                  React · JavaScript · Java 
                 </span>
               </p>
             </div>

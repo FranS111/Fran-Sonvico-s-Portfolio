@@ -81,9 +81,9 @@ const damProjectsByLang = {
 const dwitHighlightsByLang = {
   EN: [
     {
-      title: "Multi-tab UI architecture",
-      badge: "UI · UX",
-      desc: "Owned the design and refactor of multiple platform tabs—restructuring page layout, interaction flows, and visual hierarchy so complex workflows felt clearer, faster, and more polished under real daily use.",
+      title: "Angular UI modules",
+      badge: "Angular · Tailwind",
+      desc: "Built and refactored Angular feature modules for data-sheet workflows—reusable components, reactive forms, and Tailwind CSS utility styling to keep dense enterprise UIs consistent and maintainable.",
     },
     {
       title: "Permission-aware navigation",
@@ -91,9 +91,9 @@ const dwitHighlightsByLang = {
       desc: "Rebuilt role, permission, and main-menu rendering; eliminated redundant loops so critical navigation dropped from multi-second waits to instant UX.",
     },
     {
-      title: "Server-side data flows",
+      title: "Java & .NET data flows",
       badge: "Backend · Data",
-      desc: "Refactored inefficient backend layers to lighten server load and keep data delivery fast when many users operate the platform at once.",
+      desc: "Worked across Java and .NET service layers to lighten server load, keep filters and sheet state in sync, and keep data delivery fast under concurrent enterprise use.",
     },
     {
       title: "End-to-end delivery",
@@ -103,9 +103,9 @@ const dwitHighlightsByLang = {
   ],
   ES: [
     {
-      title: "Arquitectura UI multi-pestaña",
-      badge: "UI · UX",
-      desc: "Colaboré enormemente en el diseño y refactor de múltiples pestañas de plataforma, reorganizando layout, flujos de interacción y jerarquía visual para una experiencia más clara, rápida y pulida en uso real.",
+      title: "Módulos UI Angular",
+      badge: "Angular · Tailwind",
+      desc: "Construí y refactoricé módulos Angular para flujos de fichas técnicas—componentes reutilizables, formularios reactivos y estilos con Tailwind CSS para mantener UIs empresariales densas, coherentes y mantenibles.",
     },
     {
       title: "Navegación por permisos",
@@ -113,9 +113,9 @@ const dwitHighlightsByLang = {
       desc: "Rediseñé el render del menú principal basado en roles y permisos, eliminando bucles redundantes para pasar de cargas de varios segundos a una UX instantánea.",
     },
     {
-      title: "Flujos de datos backend",
+      title: "Flujos Java y .NET",
       badge: "Backend · Data",
-      desc: "Refactoricé capas ineficientes del backend para reducir carga de servidor y mantener la entrega de datos rápida bajo alta concurrencia.",
+      desc: "Trabajé sobre capas de servicio Java y .NET para reducir carga de servidor, mantener filtros y estado de fichas sincronizados y entregar datos con rapidez bajo concurrencia empresarial.",
     },
     {
       title: "Entrega end-to-end",
@@ -192,10 +192,21 @@ export function getProjectsContent(language = "EN") {
       label: lang === "ES" ? "// cimkey · enterprise" : "// cimkey · enterprise",
       desc:
         lang === "ES"
-          ? "Proyecto principal en Cimkey: plataforma web B2B compleja para gestionar fichas técnicas estructurales en sectores químico y alimentario."
-          : "Flagship enterprise build at Cimkey: a complex B2B web platform for governing structural technical data sheets across chemical and food-industry workflows.",
+          ? "Proyecto principal en Cimkey: plataforma web B2B compleja para gestionar fichas técnicas estructurales. Frontend Angular + Tailwind CSS integrado con servicios Java y .NET."
+          : "Flagship enterprise build at Cimkey: a complex B2B web platform for structural technical data sheets. Angular + Tailwind CSS frontend integrated with Java and .NET services.",
       highlights: dwitHighlights,
-      tags: ["JavaScript", "Java", "HTML5", "CSS/SASS", "PL/SQL", "UI/UX", "Agile", "B2B"],
+      tags: [
+        "Angular",
+        "Tailwind CSS",
+        "JavaScript",
+        "Java",
+        ".NET",
+        "HTML5",
+        "PL/SQL",
+        "UI/UX",
+        "Agile",
+        "B2B",
+      ],
       layout: "wide",
       liveHref: "https://dwit.es/",
     },
@@ -215,9 +226,9 @@ export function getProjectsContent(language = "EN") {
       label: lang === "ES" ? "// cimkey · producción" : "// cimkey · production",
       desc:
         lang === "ES"
-          ? "Desarrollo de funcionalidades y soporte en producción para el CRM logístico de ISS: pedidos, empleados y resolución de incidencias críticas."
-          : "CRM features and production support for ISS logistics—orders, employees, and critical bug fixes.",
-      tags: ["JavaScript", "Java", "PL/SQL", "CRM"],
+          ? "Funcionalidades y soporte en producción del CRM logístico de ISS: pedidos, empleados e incidencias críticas, con pantallas JavaScript y servicios .NET/Java respaldados en PL/SQL."
+          : "CRM features and production support for ISS logistics—orders, employees, and critical fixes across JavaScript screens and .NET/Java services backed by PL/SQL.",
+      tags: ["JavaScript", "Java", ".NET", "PL/SQL", "CRM"],
       layout: "small-a",
       compact: true,
     },
@@ -228,7 +239,7 @@ export function getProjectsContent(language = "EN") {
         lang === "ES"
           ? "Portfolio en React con UI modular, desplegado en GitHub Pages."
           : "React portfolio site with modular UI, deployed on GitHub Pages.",
-      tags: ["React", "JavaScript", "HTML5", "CSS/SASS"],
+      tags: ["React", "JavaScript", "HTML5", "CSS3", "SASS"],
       layout: "small-b",
       compact: true,
       liveHref: "https://frans111.github.io/Fran-Sonvico-s-Portfolio/",
