@@ -3,17 +3,18 @@ const experienceByLang = {
     {
       period: "FEB 2025 - MAY 2026",
       role: "Fullstack Web Developer",
-      company: "Cimkey",
+      company: "Cimkey · Barcelona",
       description:
-        "Led frontend architecture and interaction design on Dwit, an enterprise B2B platform for structural technical data sheets. Built Angular feature modules and reusable UI components styled with Tailwind CSS; kept complex filters and forms in sync with Java and .NET services; redesigned permission-aware navigation to cut load times from seconds to instant response; and streamlined backend data flows under concurrent use. Maintained ISS logistics CRM in production—extending JavaScript/.NET screens and PL/SQL-backed flows—while owning work end-to-end from UI through pre-production with Agile coordination and technical documentation.",
+        "Contributed to **frontend architecture** on Dwit, an enterprise B2B platform for structural technical data sheets. Designed and implemented a generic **dynamic-filtering system** by data-sheet type—driving create, edit, and delete flows and keeping UI state in sync between Angular, JavaScript, HTML5, CSS, and Tailwind CSS on the frontend and Java, .NET, and C# on the backend. Redesigned role/permission navigation so menu rendering dropped from multi-second waits to **instant UX**; refactored inefficient PL/SQL queries and stored procedures under multi-user load; and provided **critical production support** for ISS logistics CRM (orders and employees). Delivered work end-to-end from UI design through pre-production with technical documentation and Agile syncs.",
       tags: [
-        "JavaScript",
-        "Java",
         "Angular",
+        "JavaScript",
         "Tailwind CSS",
-        ".NET",
         "HTML5",
         "CSS3",
+        "Java",
+        ".NET",
+        "C#",
         "PL/SQL",
         "Agile",
       ],
@@ -21,27 +22,28 @@ const experienceByLang = {
     {
       period: "JUL 2023 - FEB 2025",
       role: "Fullstack Web Developer",
-      company: "New Strategy In Action S.L. (Strategying)",
+      company: "New Strategy In Action S.L. (Strategying) · Barcelona",
       description:
-        "Independently built an internal real-time analytics dashboard with Laravel migrations and third-party API integrations. Delivered modular Livewire components, Context API state, and CRUD flows with dynamic filtering and pagination for Momento Seguros and Smurfit Kappa client apps, including localization, validation, and full QA coverage.",
-      tags: ["Laravel", "PHP", "Livewire", "React", "JavaScript", "Blade", "MySQL", "Agile"],
+        "Independently designed and built an internal **real-time analytics dashboard** in React and JavaScript with Context API state, Laravel migrations for relational schemas, and third-party API integrations. In a separate client track, delivered modular Livewire components, CRUD flows, and data tables with dynamic filtering, sorting, and pagination. Designed modular UI, validation, and multi-language localization for **Momento Seguros** and **Smurfit Kappa** apps, with unit, integration, and system QA coverage.",
+      tags: ["React", "JavaScript", "Laravel", "PHP", "Livewire", "Blade", "MySQL", "Agile"],
     },
   ],
   ES: [
     {
       period: "FEB 2025 - MAY 2026",
       role: "Desarrollador Web Fullstack",
-      company: "Cimkey",
+      company: "Cimkey · Barcelona",
       description:
-        "Colaboré enormemente en la arquitectura frontend y el diseño de interacción en Dwit, una plataforma B2B empresarial para fichas técnicas estructurales. Construí módulos Angular y componentes UI reutilizables con Tailwind CSS; mantuve filtros y formularios complejos sincronizados con servicios Java y .NET; rediseñé la navegación por permisos para reducir cargas de segundos a respuesta instantánea; y optimicé flujos de datos bajo alta concurrencia. También mantuve en producción el CRM logístico de ISS—ampliando pantallas JavaScript/.NET y flujos respaldados en PL/SQL—gestionando el ciclo end-to-end desde UI hasta preproducción con coordinación Agile y documentación técnica.",
+        "Colaboré en la **arquitectura frontend** de Dwit, plataforma B2B empresarial para fichas técnicas estructurales. Diseñé e implementé un sistema genérico de **filtrado dinámico** por tipo de ficha—impulsando flujos de alta, edición y borrado y manteniendo el estado de UI sincronizado entre Angular, JavaScript, HTML5, CSS y Tailwind CSS en frontend y Java, .NET y C# en backend. Rediseñé la navegación por roles/permisos para pasar de cargas de varios segundos a **UX instantánea**; refactoricé consultas y procedimientos PL/SQL ineficientes bajo carga multiusuario; y di **soporte crítico en producción** al CRM logístico de ISS (pedidos y empleados). Entregué trabajo end-to-end desde UI hasta preproducción con documentación técnica y sincronización Agile.",
       tags: [
-        "JavaScript",
-        "Java",
         "Angular",
+        "JavaScript",
         "Tailwind CSS",
-        ".NET",
         "HTML5",
         "CSS3",
+        "Java",
+        ".NET",
+        "C#",
         "PL/SQL",
         "Agile",
       ],
@@ -49,10 +51,10 @@ const experienceByLang = {
     {
       period: "JUL 2023 - FEB 2025",
       role: "Desarrollador Web Fullstack",
-      company: "New Strategy In Action S.L. (Strategying)",
+      company: "New Strategy In Action S.L. (Strategying) · Barcelona",
       description:
-        "Desarrollé de forma autónoma un dashboard interno de analítica en tiempo real con migraciones en Laravel e integraciones con APIs de terceros. Entregué componentes modulares con Livewire, estado con Context API y flujos CRUD con filtros dinámicos y paginación para aplicaciones de clientes como Momento Seguros y Smurfit Kappa, incluyendo localización, validaciones y QA completo.",
-      tags: ["Laravel", "PHP", "Livewire", "React","JavaScript", "Blade", "MySQL", "Agile"],
+        "Diseñé y desarrollé de forma autónoma un **dashboard interno de analítica en tiempo real** con React y JavaScript, estado con Context API, migraciones Laravel para esquemas relacionales e integraciones con APIs de terceros. En otra línea de cliente, entregué componentes Livewire modulares, flujos CRUD y tablas con filtrado dinámico, ordenación y paginación. Diseñé UI modular, validaciones y localización multiidioma para apps de **Momento Seguros** y **Smurfit Kappa**, con cobertura QA unitaria, de integración y de sistema.",
+      tags: ["React", "JavaScript", "Laravel", "PHP", "Livewire", "Blade", "MySQL", "Agile"],
     },
   ],
 };
@@ -64,7 +66,7 @@ const educationByLang = {
       role: "B.S. in Software Engineering (Software Development & Testing)",
       company: "Joint Degree: UOC, OUNL & UNED",
       description:
-        "Online international bachelor's covering the full software lifecycle: programming, software architecture, testing, UX, web and mobile development, cloud computing, systems, and cybersecurity.",
+        "Online international bachelor's covering the full **software lifecycle**: programming, software architecture, testing, UX, web and mobile development, cloud computing, systems, and cybersecurity.",
       tags: [
         "Software Engineering",
         "Testing",
@@ -78,7 +80,7 @@ const educationByLang = {
       role: "Cambridge English C1 Advanced (CAE)",
       company: "Cambridge Assessment English",
       description:
-        "Certified advanced English proficiency (CEFR C1): fluent professional communication, complex texts, and confident spoken and written expression in international contexts.",
+        "Certified advanced English proficiency (**CEFR C1**): fluent professional communication, complex texts, and confident spoken and written expression in international contexts.",
       tags: ["CEFR", "Cambridge"],
     },
     {
@@ -86,7 +88,7 @@ const educationByLang = {
       role: "Higher Technical Degree in Multi-platform Applications Development (DAM)",
       company: "STUCOM Pelai · Centre d'estudis",
       description:
-        "Vocational degree covering full-stack and multi-platform development, relational databases, software engineering, and production-ready application delivery.",
+        "Vocational degree covering **full-stack** and **multi-platform development**, relational databases, software engineering, and production-ready application delivery.",
       tags: ["Full-Stack Development", "Databases", "Mobile", "Testing", "Teamwork"],
     },
     {
@@ -94,7 +96,7 @@ const educationByLang = {
       role: "Technological Baccalaureate",
       company: "Escola Maristes Anna Ravell",
       description:
-        "STEM-focused baccalaureate with emphasis on mathematics, physics, and computing foundations for higher technical studies.",
+        "**STEM**-focused baccalaureate with emphasis on mathematics, physics, and computing foundations for higher technical studies.",
       tags: ["STEM", "Mathematics", "Physics", "Computing"],
     },
   ],
@@ -104,7 +106,7 @@ const educationByLang = {
       role: "Grado en Ingeniería de Software (Desarrollo y pruebas de Software)",
       company: "Interuniversitario: UOC, OUNL, UNED",
       description:
-        "Grado internacional online centrado en el ciclo de vida del software: programación, arquitectura, pruebas, UX, desarrollo web y móvil, cloud computing, sistemas y ciberseguridad.",
+        "Grado internacional online centrado en el **ciclo de vida del software**: programación, arquitectura, pruebas, UX, desarrollo web y móvil, cloud computing, sistemas y ciberseguridad.",
       tags: [
         "Ingeniería de Software",
         "Testing",
@@ -118,7 +120,7 @@ const educationByLang = {
       role: "Cambridge English C1 Advanced (CAE)",
       company: "Cambridge Assessment English",
       description:
-        "Certificación de inglés avanzado (MCER C1): comunicación profesional fluida, comprensión de textos complejos y expresión oral y escrita con soltura en contextos internacionales.",
+        "Certificación de inglés avanzado (**MCER C1**): comunicación profesional fluida, comprensión de textos complejos y expresión oral y escrita con soltura en contextos internacionales.",
       tags: ["MCER", "Cambridge"],
     },
     {
@@ -126,7 +128,7 @@ const educationByLang = {
       role: "CFGS en Desarrollo de Aplicaciones Multiplataforma (DAM)",
       company: "STUCOM Pelai · Centre d'estudis",
       description:
-        "Formación técnica orientada a desarrollo full-stack y multiplataforma, bases de datos relacionales, ingeniería de software y entrega de aplicaciones listas para producción.",
+        "Formación técnica orientada a desarrollo **full-stack** y **multiplataforma**, bases de datos relacionales, ingeniería de software y entrega de aplicaciones listas para producción.",
       tags: ["Desarrollo Full-Stack", "Bases de datos", "Mobile", "Testing", "Trabajo en equipo"],
     },
     {
@@ -134,7 +136,7 @@ const educationByLang = {
       role: "Bachillerato Tecnológico",
       company: "Escola Maristes Anna Ravell",
       description:
-        "Bachillerato con enfoque STEM, con base sólida en matemáticas, física y fundamentos de informática para estudios técnicos superiores.",
+        "Bachillerato con enfoque **STEM**, con base sólida en matemáticas, física y fundamentos de informática para estudios técnicos superiores.",
       tags: ["STEM", "Matemáticas", "Física", "Computación"],
     },
   ],

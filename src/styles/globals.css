@@ -170,6 +170,35 @@ body {
   transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
 }
 
+/* Emphasized keywords in body copy (Experience, Projects, Stack, etc.) */
+p strong,
+.contact-aside-lead strong {
+  color: var(--text-strong-emphasis);
+  font-weight: 700;
+  opacity: 1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+p strong:hover,
+.contact-aside-lead strong:hover {
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] p strong:hover,
+[data-theme="dark"] .contact-aside-lead strong:hover {
+  color: var(--color-enhancement-strong);
+}
+
+/* Intro keeps its own dotted underline treatment */
+.intro-content p strong {
+  display: inline-block;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--text-strong-emphasis) 55%, transparent);
+}
+
 /* Scroll reveal system */
 .reveal-root .reveal-item {
   opacity: 0;

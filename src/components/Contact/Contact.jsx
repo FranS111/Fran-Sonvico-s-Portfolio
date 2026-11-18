@@ -3,6 +3,7 @@ import "./Contact.css";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import { CONTACT_EMAIL, getSocials } from "../../data/socials";
 import useI18n from "../../hooks/useI18n";
+import { renderMarkedText } from "../../utils/renderWithEmphasis";
 
 const MIN_MESSAGE_LEN = 20;
 const FIELD_MAX = {
@@ -248,7 +249,7 @@ export default function Contact() {
               {t("contact.letsWorkTogether")}
             </h3>
             <p className="contact-aside-lead">
-              {t("contact.lead")}
+              {renderMarkedText(t("contact.lead"))}
             </p>
 
             <div className="contact-terminal" role="group" aria-label="Quick status">
@@ -263,7 +264,7 @@ export default function Contact() {
               <p className="contact-terminal-line">
                 <span className="contact-terminal-k">//</span> {t("contact.preferredStack")}:{" "}
                 <span className="contact-terminal-v">
-                  React · JavaScript · Java 
+                  Angular · React · Java · .NET 
                 </span>
               </p>
             </div>

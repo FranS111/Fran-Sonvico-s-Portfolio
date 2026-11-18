@@ -2,6 +2,7 @@ import "./Projects.css";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import { getProjectsContent } from "../../data/projects";
 import useI18n from "../../hooks/useI18n";
+import { renderMarkedText } from "../../utils/renderWithEmphasis";
 
 export default function Projects() {
   const { language, t } = useI18n();
@@ -31,7 +32,7 @@ export default function Projects() {
               ) : null}
             </div>
             <h4>{project.title}</h4>
-            <p>{project.desc}</p>
+            <p>{renderMarkedText(project.desc)}</p>
 
             {project.highlights ? (
               <ul className="project-collection-list project-highlights-list">
@@ -41,7 +42,9 @@ export default function Projects() {
                       <span className="project-collection-name">{item.title}</span>
                       <span className="project-collection-lang">{item.badge}</span>
                     </div>
-                    <p className="project-collection-desc">{item.desc}</p>
+                    <p className="project-collection-desc">
+                      {renderMarkedText(item.desc)}
+                    </p>
                   </li>
                 ))}
               </ul>
@@ -60,7 +63,9 @@ export default function Projects() {
                       <span className="project-collection-name">{repo.name}</span>
                       <span className="project-collection-lang">{repo.lang}</span>
                     </a>
-                    <p className="project-collection-desc">{repo.desc}</p>
+                    <p className="project-collection-desc">
+                      {renderMarkedText(repo.desc)}
+                    </p>
                   </li>
                 ))}
               </ul>

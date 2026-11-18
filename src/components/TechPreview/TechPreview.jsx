@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "../Stack/Stack.css";
+import { renderMarkedText } from "../../utils/renderWithEmphasis";
 
 function getProjectPreviewDesc(project) {
   if (project.highlights?.length) {
@@ -129,7 +130,7 @@ export default function TechPreview({
         {displayed.category && (
           <p className="tech-preview-category">{displayed.category}</p>
         )}
-        <p>{displayed.desc}</p>
+        <p>{renderMarkedText(displayed.desc)}</p>
         {displayed.tags && displayed.tags.length > 0 && (
           <div className="preview-tags">
             {displayed.tags.map((t) => (

@@ -2,34 +2,7 @@ import "./Intro.css";
 import Accordion from "../Accordion/Accordion";
 import { getSocials } from "../../data/socials";
 import useI18n from "../../hooks/useI18n";
-
-function escapeRegExp(value) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-function renderWithEmphasis(text, emphasisTerms = []) {
-  if (!text || !emphasisTerms.length) return text;
-
-  const normalizedTerms = [...new Set(emphasisTerms)]
-    .filter(Boolean)
-    .sort((a, b) => b.length - a.length);
-
-  if (!normalizedTerms.length) return text;
-
-  const regex = new RegExp(`(${normalizedTerms.map(escapeRegExp).join("|")})`, "gi");
-  const parts = text.split(regex);
-  let key = 0;
-
-  return parts.map((part) => {
-    if (!part) return null;
-    const isEmphasis = normalizedTerms.some(
-      (term) => term.toLowerCase() === part.toLowerCase()
-    );
-    if (!isEmphasis) return part;
-    key += 1;
-    return <strong key={`intro-emphasis-${key}`}>{part}</strong>;
-  });
-}
+import { renderWithEmphasis } from "../../utils/renderWithEmphasis";
 
 export default function Intro() {
   const { language, t, dictionary } = useI18n();

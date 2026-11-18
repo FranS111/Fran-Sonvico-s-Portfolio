@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Accordion.css";
 import useI18n from "../../hooks/useI18n";
+import { renderMarkedText } from "../../utils/renderWithEmphasis";
 
 export default function Accordion() {
   const { t } = useI18n();
@@ -81,7 +82,7 @@ export default function Accordion() {
           <div
             className={`accordion-content ${activeIndex === index ? "open" : ""}`}
           >
-            <p>{item.content}</p>
+            <p>{renderMarkedText(item.content)}</p>
           </div>
         </div>
       ))}

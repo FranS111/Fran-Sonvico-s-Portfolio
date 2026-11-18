@@ -39,7 +39,7 @@ export const messages = {
         "engineering best practices",
         "technical documentation",
       ],
-      p1: "Fullstack Developer with 3 years of experience building and optimizing enterprise web applications. Working across the full lifecycle—from robust backend architecture to seamless user interfaces—with a long-term focus on the Frontend ecosystem.",
+      p1: "Fullstack Developer with 3 years of experience building and maintaining enterprise web platforms (Angular, React, Java, .NET). Strong in scalable UI architecture, backed by a solid foundation in backend and relational databases—with a long-term focus on the Frontend ecosystem.",
       p2: "Beyond writing code, I combine a solid technical foundation with lateral thinking and an aesthetic sensibility shaped by music, art, and architecture—bringing both visual craft and novel solutions to complex problems. I care deeply about UX and interaction design: interfaces that are intuitive and appealing, yet technically efficient and optimized for system performance, delivering real end-to-end business value.",
       p3: "Adept at managing full-stack cohesion, managing complex data flows and designing modular architectures with reusable, maintainable components for large, long-term projects. I have cut critical loading times from seconds to near-instant response, maintained platforms in production, and handled demanding large-scale projects.",
       p4: "Thrive in high-collaboration Agile environments, with a strong commitment to promoting continuous learning, engineering best practices, and high-quality technical documentation.",
@@ -47,10 +47,10 @@ export const messages = {
     accordion: {
       about: "About Me",
       aboutContent:
-        "I love turning complex ideas into clean, intuitive interfaces. Creative fullstack dev: modular, reusable components built to scale. Shaped by art & architecture design and engineering with equal passion.",
+        "I love turning complex ideas into clean, **intuitive interfaces**. Creative fullstack dev: modular, reusable components built to scale. Shaped by **art & architecture** design and engineering with equal passion.",
       skills: "Skills",
       skillsContent:
-        "Angular, React, Next.js & TypeScript frontends; Java, .NET, PHP/Laravel backends; Tailwind CSS, SQL/PL/SQL. Enterprise UI, APIs, CRUD & performance in Agile teams.",
+        "Angular, React, Next.js & TypeScript frontends; Java, .NET, PHP/Laravel backends; Tailwind CSS, SQL/PL/SQL. **Enterprise UI**, APIs, CRUD & performance in **Agile** teams.",
     },
     duration: {
       year: "year",
@@ -80,7 +80,7 @@ export const messages = {
         "Hiring teams, founders, and collaborators — tell me what you're building",
       letsWorkTogether: "Let's work together",
       lead:
-        "Full-stack product work, scoped engagements, and long-term roles. Share context and timelines — I reply with next steps, not auto-replies.",
+        "**Full-stack** product work, scoped engagements, and long-term roles. Share context and timelines — I reply with next steps, not auto-replies.",
       availability: "availability",
       responseSla: "response_sla",
       preferredStack: "preferred_stack",
@@ -172,7 +172,7 @@ export const messages = {
         "buenas prácticas de ingeniería",
         "documentación técnica de calidad",
       ],
-      p1: "Desarrollador Fullstack con 3 años de experiencia construyendo y optimizando aplicaciones web empresariales. Trabajo a lo largo de todo el ciclo de vida desde arquitectura backend robusta hasta interfaces de usuario fluidas con foco a largo plazo en el ecosistema Frontend.",
+      p1: "Desarrollador Fullstack con 3 años de experiencia construyendo y manteniendo plataformas web empresariales (Angular, React, Java, .NET). Fuerte en arquitectura UI escalable, con base sólida en backend y bases de datos relacionales—y foco a largo plazo en el ecosistema Frontend.",
       p2: "Más allá de programar, combino una base técnica sólida con pensamiento lateral y una sensibilidad estética influida por la música, el arte y la arquitectura; aportando tanto calidad visual como soluciones novedosas a problemas complejos. Me apasiona especialmente el diseño de UX y el diseño de interacción: interfaces intuitivas y atractivas, pero también eficientes técnicamente y optimizadas para rendimiento del sistema, entregando valor real end-to-end.",
       p3: "Cuento con experiencia demostrada en cohesión full-stack, gestión de flujos de datos complejos y diseño de arquitecturas modulares basadas en componentes reutilizables y mantenibles para proyectos de gran envergadura. A lo largo de mi trayectoria, he logrado reducir tiempos de carga críticos de varios segundos a respuestas casi instantáneas, además de mantener plataformas en producción y gestionar requerimientos de alta exigencia.",
       p4: "Me integro y desenvuelvo con soltura en entornos Agile de alta colaboración, manteniendo un firme compromiso con el aprendizaje continuo, las buenas prácticas de ingeniería y la documentación técnica de calidad.",
@@ -180,10 +180,10 @@ export const messages = {
     accordion: {
       about: "Sobre mí",
       aboutContent:
-        "Creo software pensando en las personas. Me mueve el diseño, la UX y piezas reutilizables que escalan sin perder alma. Dev fullstack creativo — inspirado en música, arte y arquitectura.",
+        "Creo software pensando en las personas. Me mueve el diseño, la **UX** y piezas reutilizables que escalan sin perder alma. Dev fullstack creativo — inspirado en música, arte y **arquitectura**.",
       skills: "Habilidades",
       skillsContent:
-        "Frontends Angular, React, Next.js y TypeScript; backends Java, .NET, PHP/Laravel; Tailwind CSS, SQL/PL/SQL. UI empresarial, APIs, CRUD y rendimiento en equipos Agile.",
+        "Frontends Angular, React, Next.js y TypeScript; backends Java, .NET, PHP/Laravel; Tailwind CSS, SQL/PL/SQL. **UI empresarial**, APIs, CRUD y rendimiento en equipos **Agile**.",
     },
     duration: {
       year: "año",
@@ -213,7 +213,7 @@ export const messages = {
         "Equipos de contratación, founders y colaboradores — cuéntame qué estás construyendo",
       letsWorkTogether: "Trabajemos juntos",
       lead:
-        "Trabajo full-stack orientado a producto, colaboraciones por alcance y roles a largo plazo. Comparte contexto y tiempos — respondo con próximos pasos, no con autorespuestas.",
+        "Trabajo **full-stack** orientado a producto, colaboraciones por alcance y roles a largo plazo. Comparte contexto y tiempos — respondo con próximos pasos, no con autorespuestas.",
       availability: "availability",
       responseSla: "response_sla",
       preferredStack: "preferred_stack",

@@ -44,6 +44,7 @@ const TECH_ORIGIN_SECTION = {
   Angular: "experience",
   "Tailwind CSS": "experience",
   ".NET": "experience",
+  MySQL: "experience",
   "Next.js": "projects",
   TypeScript: "projects",
   AJAX: "education",

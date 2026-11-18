@@ -3,6 +3,7 @@ import SectionHeader from "../SectionHeader/SectionHeader";
 import { getExperienceContent } from "../../data/experience";
 import useI18n from "../../hooks/useI18n";
 import { formatPeriodDuration } from "../../utils/formatPeriodDuration";
+import { renderMarkedText } from "../../utils/renderWithEmphasis";
 
 export default function ExperienceEducation() {
   const { language, dictionary } = useI18n();
@@ -72,7 +73,7 @@ export default function ExperienceEducation() {
                             {item.company}
                           </span>
                         </h4>
-                        <p>{item.description}</p>
+                        <p>{renderMarkedText(item.description)}</p>
                         <div className="experience-tags">
                           {item.tags.map((tag) => (
                             <span
