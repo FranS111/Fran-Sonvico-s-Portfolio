@@ -39,7 +39,7 @@ const stackPreviewsByLang = {
     },
     TypeScript: {
       title: "Typed frontend craft",
-      desc: "Strict **TypeScript** across Wildlife Encyclopedia (Next.js) and typed Angular modules in enterprise UI work.",
+      desc: "Strict **TypeScript** across EXOCAT Interactive Visualizer (React + Vite) and typed Angular modules in enterprise UI work.",
       tags: ["TypeScript", "React", "Angular"],
     },
     React: {
@@ -48,8 +48,8 @@ const stackPreviewsByLang = {
       tags: ["React", "JavaScript"],
     },
     "Next.js": {
-      title: "Wildlife Encyclopedia",
-      desc: "App Router + React + TypeScript with static generation (**SSG**) for species pages—performance, SEO, and design-system driven UI.",
+      title: "React meta-framework",
+      desc: "App Router + React + TypeScript with static generation (**SSG**) and server rendering for fast, SEO-friendly pages.",
       tags: ["Next.js", "React", "TypeScript"],
     },
     Angular: {
@@ -63,8 +63,8 @@ const stackPreviewsByLang = {
       tags: ["Vue.js", "JavaScript"],
     },
     "Tailwind CSS": {
-      title: "Dwit & Wildlife styling",
-      desc: "Utility-first styling on Dwit enterprise UI at Cimkey, and **design-token** systems in Wildlife Encyclopedia.",
+      title: "Dwit enterprise styling",
+      desc: "Utility-first styling on Dwit enterprise UI at Cimkey, with consistent **design tokens** across modules.",
       tags: ["Tailwind CSS", "CSS3"],
     },
     "Node.js": {
@@ -156,7 +156,7 @@ const stackPreviewsByLang = {
     },
     TypeScript: {
       title: "Frontend tipado",
-      desc: "**TypeScript** strict en Wildlife Encyclopedia (Next.js) y módulos Angular tipados en UI empresarial.",
+      desc: "**TypeScript** strict en EXOCAT Interactive Visualizer (React + Vite) y módulos Angular tipados en UI empresarial.",
       tags: ["TypeScript", "React", "Angular"],
     },
     React: {
@@ -165,8 +165,8 @@ const stackPreviewsByLang = {
       tags: ["React", "JavaScript"],
     },
     "Next.js": {
-      title: "Wildlife Encyclopedia",
-      desc: "App Router + React + TypeScript con generación estática (**SSG**) en páginas de especies—rendimiento, SEO y UI basada en design system.",
+      title: "Meta-framework de React",
+      desc: "App Router + React + TypeScript con generación estática (**SSG**) y renderizado en servidor para páginas rápidas y optimizadas para SEO.",
       tags: ["Next.js", "React", "TypeScript"],
     },
     Angular: {
@@ -180,8 +180,8 @@ const stackPreviewsByLang = {
       tags: ["Vue.js", "JavaScript"],
     },
     "Tailwind CSS": {
-      title: "Estilos Dwit y Wildlife",
-      desc: "Estilos utility-first en la UI empresarial de Dwit (Cimkey) y sistemas de **tokens** en Wildlife Encyclopedia.",
+      title: "Estilos empresariales Dwit",
+      desc: "Estilos utility-first en la UI empresarial de Dwit (Cimkey), con **tokens** de diseño coherentes entre módulos.",
       tags: ["Tailwind CSS", "CSS3"],
     },
     "Node.js": {

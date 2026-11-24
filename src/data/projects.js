@@ -132,60 +132,72 @@ export function getProjectsContent(language = "EN") {
 
   return [
     {
-      title: lang === "ES" ? "Wildlife Encyclopedia" : "Wildlife Encyclopedia",
+      title: "EXOCAT Interactive Visualizer",
       label: lang === "ES" ? "// en curso · personal" : "// ongoing · personal",
       status: lang === "ES" ? "En curso" : "Ongoing",
       desc:
         lang === "ES"
-          ? "App web moderna, calmada e inspirada en la naturaleza para explorar especies animales. Proyecto en curso orientado a craft frontend: **design system**, arquitectura de componentes, accesibilidad, rendimiento y testing — camino **Frontend Architect / Design Engineer**."
-          : "A modern, calm, nature-inspired web app for browsing and exploring animal species. Ongoing build focused on frontend craft: **design system**, component architecture, accessibility, performance, and testing — aimed at a **Frontend Architect / Design Engineer** path.",
+          ? "Atlas interactivo de la **fauna exótica invasora de Cataluña**: un dashboard de datos con filtrado cruzado y una guía de campo visual en una sola app. Cubre 31 especies invasoras reales en las 14 cuencas fluviales catalanas, con registros sintéticos y deterministas para la demo."
+          : "Interactive atlas of the **invasive alien fauna of Catalonia**: a cross-filtering data dashboard and a visual field guide in one app. Covers 31 real invasive species across Catalonia's 14 river basins, with seeded, deterministic synthetic records for demo purposes.",
       highlights:
         lang === "ES"
           ? [
               {
-                title: "Design system & tokens",
-                badge: "UI · Tokens",
-                desc: "Tailwind CSS con **design tokens** (variables CSS) para color, spacing, radius, tipografía y motion, manteniendo una UI coherente y escalable.",
+                title: "Dashboard con filtrado cruzado",
+                badge: "Leaflet · Recharts",
+                desc: "Vista de datos para técnicos e investigadores: mapa Leaflet (registros en capa canvas, malla de densidad de 10 km, cuencas), composición taxonómica, registros por cuenca y riesgo, timeline con **brush** de periodo y catálogo de especies ordenable. Cada filtro actualiza mapa, gráficos y tabla a la vez.",
               },
               {
-                title: "Arquitectura & accesibilidad",
-                badge: "A11y · Components",
-                desc: "Arquitectura de componentes reutilizable con foco en **accesibilidad** y experiencia de exploración clara en desktop y móvil.",
+                title: "Guía de campo visual",
+                badge: "Explore · d3-geo",
+                desc: "Vista editorial para el público: los cinco grupos animales, ficha destacada por especie (historia, área nativa y ruta hasta Cataluña), **atlas de orígenes** con d3-geo, timeline de primeras llegadas y consejos para ayudar.",
               },
               {
-                title: "SSG & rendimiento",
-                badge: "Next.js · Perf",
-                desc: "Next.js App Router + React + TypeScript (strict), con generación estática (**SSG**) en páginas de especies para velocidad y SEO.",
+                title: "Arquitectura tipada",
+                badge: "React · TypeScript",
+                desc: "React 18 + TypeScript sin framework de UI: contextos de datos, filtros (**useReducer** con datos derivados memoizados) y UI, hooks dedicados y estilos con **tokens CSS**. Vite como build.",
+              },
+              {
+                title: "i18n, temas y accesibilidad",
+                badge: "A11y · i18n",
+                desc: "Catalán, castellano e inglés (las claves que faltan son errores de compilación), tema día/noche según el sistema, búsqueda predictiva sin acentos, <dialog> nativo, vista de tabla para cada gráfico y soporte de **reduced motion**.",
               },
             ]
           : [
               {
-                title: "Design system & tokens",
-                badge: "UI · Tokens",
-                desc: "Tailwind CSS with **design tokens** (CSS variables) for color, spacing, radius, typography, and motion—keeping the UI coherent and scalable.",
+                title: "Cross-filtering dashboard",
+                badge: "Leaflet · Recharts",
+                desc: "Data view for technicians and researchers: Leaflet map (canvas-rendered records, 10 km density grid, basin hubs), taxonomic composition, records by watershed and risk, a **brushable** timeline, and a sortable species catalogue. Every filter updates the map, charts, and table together.",
               },
               {
-                title: "Architecture & accessibility",
-                badge: "A11y · Components",
-                desc: "Reusable component architecture with a strong **accessibility** focus and a clear exploration experience across desktop and mobile.",
+                title: "Visual field guide",
+                badge: "Explore · d3-geo",
+                desc: "Editorial, photo-led view for the general public: the five animal groups, a spotlight per species (story, native range, route to Catalonia), an **atlas of origins** built with d3-geo, a timeline of first arrivals, and practical ways to help.",
               },
               {
-                title: "SSG & performance",
-                badge: "Next.js · Perf",
-                desc: "Next.js App Router + React + TypeScript (strict), with static generation (**SSG**) for species pages to favor speed and SEO.",
+                title: "Typed architecture",
+                badge: "React · TypeScript",
+                desc: "React 18 + TypeScript with no UI framework: data, filter (**useReducer** with memoised derived data), and UI contexts, dedicated hooks, and plain **CSS tokens**. Built with Vite.",
+              },
+              {
+                title: "i18n, themes & accessibility",
+                badge: "A11y · i18n",
+                desc: "Catalan, Spanish, and English (missing keys are compile errors), system-aware day/night theme, accent-insensitive predictive search, native <dialog> profiles, table views for every chart, and **reduced-motion** support.",
               },
             ],
       tags: [
-        "Next.js",
         "React",
         "TypeScript",
-        "Tailwind CSS",
-        "SSG",
-        "Design System",
+        "Vite",
+        "Leaflet",
+        "Recharts",
+        "d3-geo",
+        "Data Viz",
+        "i18n",
         "A11y",
-        "Testing",
       ],
       layout: "full",
+      githubHref: `${GITHUB_USER}/exocat-visualizer`,
     },
     {
       title: "Dwit",
