@@ -197,6 +197,7 @@ export function getProjectsContent(language = "EN") {
         "A11y",
       ],
       layout: "full",
+      liveHref: "https://frans111.github.io/exocat-visualizer/",
       githubHref: `${GITHUB_USER}/exocat-visualizer`,
     },
     {
